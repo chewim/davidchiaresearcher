@@ -1359,6 +1359,10 @@ body.nav-open .floating-actions,
   flex-shrink: 0;
 }
 
+.floating-cta__icon {
+  flex-shrink: 0;
+}
+
 .floating-cta:hover {
   transform: translate(-3px, -3px);
   box-shadow: var(--shadow-md);
@@ -1396,6 +1400,10 @@ body.nav-open .floating-actions,
   }
   .floating-cta::before {
     display: none;
+  }
+  .floating-cta__icon {
+    width: 20px;
+    height: 20px;
   }
 }
 
