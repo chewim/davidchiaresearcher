@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>CV — David Chia</title>
+<style>
+  @page { size: A4; margin: 14mm 16mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #171614;
+    font-size: 9.6pt;
+    line-height: 1.42;
+  }
+  .mono { font-family: "Courier New", monospace; }
+  header.cv {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #171614;
+    padding-bottom: 8pt;
+    margin-bottom: 12pt;
+  }
+  header.cv h1 {
+    margin: 0;
+    font-size: 22pt;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  header.cv .role {
+    margin-top: 2pt;
+    font-size: 10pt;
+    color: #5c594f;
+  }
+  header.cv .contact {
+    text-align: right;
+    font-size: 8.6pt;
+    color: #5c594f;
+    line-height: 1.6;
+  }
+  .columns {
+    display: flex;
+    gap: 18pt;
+  }
+  .col-main { flex: 1.55; }
+  .col-side { flex: 1; border-left: 1px solid #d9d6cc; padding-left: 14pt; }
+  h2.section {
+    font-size: 8.2pt;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #171614;
+    border-bottom: 1px solid #171614;
+    padding-bottom: 2pt;
+    margin: 0 0 6pt;
+  }
+  .col-main h2.section { margin-top: 12pt; }
+  .col-main h2.section:first-child { margin-top: 0; }
+  .col-side h2.section { margin-top: 12pt; }
+  .col-side h2.section:first-child { margin-top: 0; }
+  .job { margin-bottom: 8pt; }
+  .job:last-child { margin-bottom: 0; }
+  .job .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 6pt;
+  }
+  .job .role-title { font-weight: 700; font-size: 9.8pt; }
+  .job .period { font-size: 8.2pt; color: #5c594f; white-space: nowrap; }
+  .job .org { font-size: 8.6pt; color: #5c594f; margin-top: 0.5pt; }
+  .job p.desc { margin: 3pt 0 0; font-size: 9pt; }
+  .edu-item, .lang-item { margin-bottom: 6pt; }
+  .edu-item:last-child { margin-bottom: 0; }
+  .edu-item .role-title { font-weight: 700; font-size: 8.8pt; }
+  .edu-item .period { font-size: 8pt; color: #5c594f; }
+  .edu-item .org { font-size: 8.2pt; color: #5c594f; }
+  .tools dt {
+    font-weight: 700;
+    font-size: 8.2pt;
+    margin-top: 6pt;
+  }
+  .tools dt:first-child { margin-top: 0; }
+  .tools dd {
+    margin: 1pt 0 0;
+    font-size: 8.4pt;
+    color: #5c594f;
+  }
+  .langs p { margin: 0; font-size: 8.6pt; color: #5c594f; }
+</style>
+</head>
+<body>
+  <header class="cv">
+    <div>
+      <h1>David Chia</h1>
+      <p class="role">UX Researcher · Product Design</p>
+    </div>
+    <div class="contact">
+      Gironella, Barcelona<br />
+      dcbediciones@gmail.com · +34 609 856 486<br />
+      linkedin.com/in/chiadesigner
+    </div>
+  </header>
+
+  <div class="columns">
+    <div class="col-main">
+      <h2 class="section">Experiencia profesional</h2>
+
+      <div class="job">
+        <div class="top">
+          <span class="role-title">Product Owner — The Wise Dreams</span>
+          <span class="period">Jul 2025 — May 2026</span>
+        </div>
+        <p class="org">Web y RV</p>
+        <p class="desc">Lidero proyectos de Web y RV alineando objetivos de negocio, viabilidad técnica y necesidades de usuario; traduzco hallazgos de investigación en prioridades de producto.</p>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <span class="role-title">Product Designer — The Wise Dreams</span>
+          <span class="period">Oct 2024 — May 2026</span>
+        </div>
+        <p class="org">Triportation · Producto de realidad virtual para Meta Quest 3</p>
+        <p class="desc">Diseño de producto para Meta Quest 3; investigación de usabilidad en navegación VR para simplificar el producto según la familiaridad tecnológica del usuario, no su edad.</p>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <span class="role-title">Product Designer — Agile Monkeys</span>
+          <span class="period">Mar — Abr 2024</span>
+        </div>
+        <p class="org">Freelance · Consultoría de producto digital</p>
+        <p class="desc">Investigación UX que cuestionó la inversión en un motor de recomendaciones basado en IA y optimizó los packs de compra en la venta de vinilos online.</p>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <span class="role-title">UX/UI Designer — Smartvel</span>
+          <span class="period">Ene — Sept 2023</span>
+        </div>
+        <p class="org">Madrid · Travel B2B</p>
+        <p class="desc">Auditorías UX para mejorar la usabilidad de productos existentes en un contexto travel B2B.</p>
+      </div>
+
+      <h2 class="section">Side Projects</h2>
+
+      <div class="job">
+        <div class="top">
+          <span class="role-title">Cappy — 1er premio ECOhackathon Itainnova, Zaragoza</span>
+        </div>
+        <p class="desc">Desk research y entrevistas para explorar cómo mejorar el uso del coche en entornos urbanos y mitigar su impacto ecológico, a través de aparcamiento compartido.</p>
+      </div>
+
+      <div class="job">
+        <div class="top">
+          <span class="role-title">Pujobaixo — Investigación exploratoria, coche compartido</span>
+        </div>
+        <p class="desc">Investigación sobre barreras y motivaciones de conductores y pasajeros en una plataforma de coche compartido entre el Berguedà y Barcelona.</p>
+      </div>
+    </div>
+
+    <div class="col-side">
+      <h2 class="section">Formación</h2>
+      <div class="edu-item">
+        <div class="role-title">Bootcamp Behavioral Design</div>
+        <div class="org">Dani Solana, Madrid · 2025</div>
+      </div>
+      <div class="edu-item">
+        <div class="role-title">Bootcamp Product Designer</div>
+        <div class="org">Northcamp, Madrid · 2023</div>
+      </div>
+      <div class="edu-item">
+        <div class="role-title">UX Research</div>
+        <div class="org">Coderhouse, Argentina · 2022</div>
+      </div>
+      <div class="edu-item">
+        <div class="role-title">Dirección y Gestión de Proyectos Web</div>
+        <div class="org">Elisava, Barcelona · 2016</div>
+      </div>
+      <div class="edu-item">
+        <div class="role-title">Arte y Comunicación</div>
+        <div class="org">Universitat de Barcelona (UB) · 2008–2013</div>
+      </div>
+
+      <h2 class="section">Herramientas</h2>
+      <dl class="tools">
+        <dt>Research &amp; testing</dt>
+        <dd>Figma, prototipos funcionales, GA4, Claude</dd>
+        <dt>IA aplicada</dt>
+        <dd>Claude, ChatGPT, Stitch</dd>
+        <dt>Diseño y prototipado</dt>
+        <dd>Figma, Framer, Stitch, Illustrator, Photoshop</dd>
+        <dt>Documentación</dt>
+        <dd>Notion, FigJam</dd>
+        <dt>Gestión</dt>
+        <dd>Jira, YouTrack, GitHub</dd>
+      </dl>
+
+      <h2 class="section">Idiomas</h2>
+      <div class="langs">
+        <p>Inglés (profesional) · Español (nativo) · Català (natiu)</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
