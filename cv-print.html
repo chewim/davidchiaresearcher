@@ -10,45 +10,39 @@
     margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
     color: #171614;
-    font-size: 9.6pt;
-    line-height: 1.42;
+    font-size: 9.4pt;
+    line-height: 1.36;
   }
-  .mono { font-family: "Courier New", monospace; }
   header.cv {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     border-bottom: 2px solid #171614;
-    padding-bottom: 8pt;
-    margin-bottom: 12pt;
+    padding-bottom: 6pt;
+    margin-bottom: 8pt;
   }
   header.cv h1 {
     margin: 0;
-    font-size: 22pt;
+    font-size: 21pt;
     font-weight: 800;
     letter-spacing: -0.01em;
   }
   header.cv .role {
     margin-top: 2pt;
-    font-size: 10pt;
+    font-size: 9.8pt;
     color: #5c594f;
   }
   header.cv .contact {
-    text-align: right;
-    font-size: 8.6pt;
+    margin-top: 4pt;
+    font-size: 8.4pt;
     color: #5c594f;
-    line-height: 1.6;
   }
   header.cv .contact a {
     color: #171614;
     text-decoration: underline;
   }
-  .columns {
-    display: flex;
-    gap: 18pt;
+  .summary {
+    margin: 0 0 9pt;
+    font-size: 9.4pt;
+    max-width: 92%;
   }
-  .col-main { flex: 1.55; }
-  .col-side { flex: 1; border-left: 1px solid #d9d6cc; padding-left: 14pt; }
   h2.section {
     font-size: 8.2pt;
     text-transform: uppercase;
@@ -57,13 +51,10 @@
     color: #171614;
     border-bottom: 1px solid #171614;
     padding-bottom: 2pt;
-    margin: 0 0 6pt;
+    margin: 9pt 0 5pt;
   }
-  .col-main h2.section { margin-top: 12pt; }
-  .col-main h2.section:first-child { margin-top: 0; }
-  .col-side h2.section { margin-top: 12pt; }
-  .col-side h2.section:first-child { margin-top: 0; }
-  .job { margin-bottom: 8pt; }
+  h2.section:first-of-type { margin-top: 0; }
+  .job { margin-bottom: 5.5pt; }
   .job:last-child { margin-bottom: 0; }
   .job .top {
     display: flex;
@@ -71,143 +62,121 @@
     align-items: baseline;
     gap: 6pt;
   }
-  .job .role-title { font-weight: 700; font-size: 9.8pt; }
+  .job .role-title { font-weight: 700; font-size: 9.6pt; }
   .job .period { font-size: 8.2pt; color: #5c594f; white-space: nowrap; }
   .job .org { font-size: 8.6pt; color: #5c594f; margin-top: 0.5pt; }
-  .job p.desc { margin: 3pt 0 0; font-size: 9pt; }
-  .edu-item, .lang-item { margin-bottom: 6pt; }
-  .edu-item:last-child { margin-bottom: 0; }
-  .edu-item .role-title { font-weight: 700; font-size: 8.8pt; }
-  .edu-item .period { font-size: 8pt; color: #5c594f; }
-  .edu-item .org { font-size: 8.2pt; color: #5c594f; }
-  .tools dt {
-    font-weight: 700;
-    font-size: 8.2pt;
-    margin-top: 6pt;
+  .job ul { margin: 3pt 0 0; padding-left: 12pt; }
+  .job li { font-size: 9pt; margin-bottom: 1pt; }
+  .edu-row, .tools-row {
+    margin: 0;
+    font-size: 8.8pt;
+    padding: 1.8pt 0;
+    border-bottom: 1px solid #ece9e1;
   }
-  .tools dt:first-child { margin-top: 0; }
-  .tools dd {
-    margin: 1pt 0 0;
-    font-size: 8.4pt;
-    color: #5c594f;
-  }
-  .langs p { margin: 0; font-size: 8.6pt; color: #5c594f; }
+  .edu-row:last-child, .tools-row:last-child { border-bottom: none; }
+  .edu-row strong, .tools-row strong { font-weight: 700; }
+  .edu-row span, .tools-row span { color: #5c594f; }
+  .langs p { margin: 0; font-size: 8.8pt; color: #5c594f; }
 </style>
 </head>
 <body>
   <header class="cv">
-    <div>
-      <h1>David Chia</h1>
-      <p class="role">UX Researcher · Product Design</p>
-    </div>
-    <div class="contact">
-      Gironella, Barcelona<br />
+    <h1>David Chia</h1>
+    <p class="role">UX Researcher · Product Design</p>
+    <p class="contact">
+      Gironella, Barcelona ·
       <a href="mailto:dcbediciones@gmail.com">dcbediciones@gmail.com</a> ·
-      <a href="tel:+34609856486">+34 609 856 486</a><br />
+      <a href="tel:+34609856486">+34 609 856 486</a> ·
       <a href="https://www.linkedin.com/in/chiadesigner/">linkedin.com/in/chiadesigner</a> ·
       <a href="https://chewim.github.io/davidchiaresearcher/">Portfolio</a>
-    </div>
+    </p>
   </header>
 
-  <div class="columns">
-    <div class="col-main">
-      <h2 class="section">Professional experience</h2>
+  <p class="summary">
+    UX Researcher with 3+ years combining qualitative research, product design and product ownership
+    to turn ambiguous problems into evidence-based decisions, across travel, mobility and VR/AR.
+  </p>
 
-      <div class="job">
-        <div class="top">
-          <span class="role-title">Product Owner — The Wise Dreams</span>
-          <span class="period">Jul 2025 — May 2026</span>
-        </div>
-        <p class="org">Web &amp; VR</p>
-        <p class="desc">I lead Web and VR projects, aligning business goals, technical feasibility and real user needs; I translate research findings into product priorities.</p>
-      </div>
+  <h2 class="section">Professional experience</h2>
 
-      <div class="job">
-        <div class="top">
-          <span class="role-title">Product Designer — The Wise Dreams</span>
-          <span class="period">Oct 2024 — May 2026</span>
-        </div>
-        <p class="org">Triportation · Virtual reality product for Meta Quest 3</p>
-        <p class="desc">Product design for Meta Quest 3; usability research on VR navigation to simplify the product based on users' tech familiarity rather than their age.</p>
-      </div>
-
-      <div class="job">
-        <div class="top">
-          <span class="role-title">Product Designer — Agile Monkeys</span>
-          <span class="period">Mar — Apr 2024</span>
-        </div>
-        <p class="org">Freelance · Digital product consultancy</p>
-        <p class="desc">UX research that challenged the investment in an AI-based recommendation engine and optimized purchase packs in online vinyl sales.</p>
-      </div>
-
-      <div class="job">
-        <div class="top">
-          <span class="role-title">UX/UI Designer — Smartvel</span>
-          <span class="period">Jan — Sept 2023</span>
-        </div>
-        <p class="org">Madrid · Travel B2B</p>
-        <p class="desc">UX audits to improve the usability of existing products in a B2B travel context.</p>
-      </div>
-
-      <h2 class="section">Side Projects</h2>
-
-      <div class="job">
-        <div class="top">
-          <span class="role-title">Cappy — 1st prize, ECOhackathon Itainnova, Zaragoza</span>
-        </div>
-        <p class="desc">Desk research and interviews to explore how to improve car use in urban environments and reduce its ecological impact, through shared parking.</p>
-      </div>
-
-      <div class="job">
-        <div class="top">
-          <span class="role-title">Pujobaixo — Exploratory research, carpooling</span>
-        </div>
-        <p class="desc">Research into the barriers and motivations of drivers and passengers on a carpooling platform between the Berguedà and Barcelona.</p>
-      </div>
+  <div class="job">
+    <div class="top">
+      <span class="role-title">Product Designer — The Wise Dreams</span>
+      <span class="period">Oct 2024 — May 2026</span>
     </div>
+    <p class="org">Triportation · Virtual reality product for Meta Quest 3</p>
+    <ul>
+      <li>Ran usability and behavioral research on VR navigation, segmenting users by tech familiarity instead of age to find the real adoption barrier.</li>
+      <li>Translated research findings into product design decisions for Meta Quest 3.</li>
+    </ul>
+  </div>
 
-    <div class="col-side">
-      <h2 class="section">Education</h2>
-      <div class="edu-item">
-        <div class="role-title">Behavioral Design Bootcamp</div>
-        <div class="org">Dani Solana, Madrid · 2025</div>
-      </div>
-      <div class="edu-item">
-        <div class="role-title">Product Designer Bootcamp</div>
-        <div class="org">Northcamp, Madrid · 2023</div>
-      </div>
-      <div class="edu-item">
-        <div class="role-title">UX Research</div>
-        <div class="org">Coderhouse, Argentina · 2022</div>
-      </div>
-      <div class="edu-item">
-        <div class="role-title">Web Project Direction and Management</div>
-        <div class="org">Elisava, Barcelona · 2016</div>
-      </div>
-      <div class="edu-item">
-        <div class="role-title">Art and Communication</div>
-        <div class="org">Universitat de Barcelona (UB) · 2008–2013</div>
-      </div>
-
-      <h2 class="section">Tools</h2>
-      <dl class="tools">
-        <dt>Research &amp; testing</dt>
-        <dd>Figma, functional prototypes, GA4, Claude</dd>
-        <dt>Applied AI</dt>
-        <dd>Claude, ChatGPT, Stitch</dd>
-        <dt>Design &amp; prototyping</dt>
-        <dd>Figma, Framer, Stitch, Illustrator, Photoshop</dd>
-        <dt>Documentation</dt>
-        <dd>Notion, FigJam</dd>
-        <dt>Management</dt>
-        <dd>Jira, YouTrack, GitHub</dd>
-      </dl>
-
-      <h2 class="section">Languages</h2>
-      <div class="langs">
-        <p>English (professional) · Spanish (native) · Catalan (native)</p>
-      </div>
+  <div class="job">
+    <div class="top">
+      <span class="role-title">Product Owner — The Wise Dreams</span>
+      <span class="period">Jul 2025 — May 2026</span>
     </div>
+    <p class="org">Web &amp; VR</p>
+    <ul>
+      <li>Translated research findings into product priorities, aligning business goals, technical feasibility and real user needs across Web and VR projects.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top">
+      <span class="role-title">Product Designer — Agile Monkeys</span>
+      <span class="period">Mar — Apr 2024</span>
+    </div>
+    <p class="org">Freelance · Digital product consultancy</p>
+    <ul>
+      <li>Conducted UX research that challenged the initial hypothesis behind an AI-based recommendation engine and redirected the roadmap toward a more relevant, evidence-backed feature.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="top">
+      <span class="role-title">UX/UI Designer — Smartvel</span>
+      <span class="period">Jan — Sept 2023</span>
+    </div>
+    <p class="org">Madrid · Travel B2B</p>
+    <ul>
+      <li>Ran UX audits to identify and fix usability issues on existing B2B travel products.</li>
+    </ul>
+  </div>
+
+  <h2 class="section">Side Projects</h2>
+
+  <div class="job">
+    <div class="top">
+      <span class="role-title">Cappy — 1st prize, ECOhackathon Itainnova, Zaragoza</span>
+    </div>
+    <p class="org">Desk research and interviews on shared parking to reduce car use's ecological impact in urban environments.</p>
+  </div>
+
+  <div class="job">
+    <div class="top">
+      <span class="role-title">Pujobaixo — Exploratory research, carpooling</span>
+    </div>
+    <p class="org">Research into the barriers and motivations of drivers and passengers on a carpooling platform between the Berguedà and Barcelona.</p>
+  </div>
+
+  <h2 class="section">Education</h2>
+  <p class="edu-row"><strong>Behavioral Design Bootcamp</strong> <span>— Dani Solana, Madrid · 2025</span></p>
+  <p class="edu-row"><strong>Product Designer Bootcamp</strong> <span>— Northcamp, Madrid · 2023</span></p>
+  <p class="edu-row"><strong>UX Research</strong> <span>— Coderhouse, Argentina · 2022</span></p>
+  <p class="edu-row"><strong>Web Project Direction and Management</strong> <span>— Elisava, Barcelona · 2016</span></p>
+  <p class="edu-row"><strong>Art and Communication</strong> <span>— Universitat de Barcelona (UB) · 2008–2013</span></p>
+
+  <h2 class="section">Tools</h2>
+  <p class="tools-row"><strong>Research &amp; testing:</strong> <span>Figma, functional prototypes, GA4, Claude</span></p>
+  <p class="tools-row"><strong>Applied AI:</strong> <span>Claude, ChatGPT, Stitch</span></p>
+  <p class="tools-row"><strong>Design &amp; prototyping:</strong> <span>Figma, Framer, Stitch, Illustrator, Photoshop</span></p>
+  <p class="tools-row"><strong>Documentation:</strong> <span>Notion, FigJam</span></p>
+  <p class="tools-row"><strong>Management:</strong> <span>Jira, YouTrack, GitHub</span></p>
+
+  <h2 class="section">Languages</h2>
+  <div class="langs">
+    <p>English (professional) · Spanish (native) · Catalan (native)</p>
   </div>
 </body>
 </html>
