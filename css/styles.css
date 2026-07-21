@@ -271,6 +271,20 @@ p {
   border-bottom: 2px solid var(--color-text);
 }
 
+/* Progressive-enhancement entrance: JS adds .header-fade-init, then
+   .is-visible on first scroll. If JS never runs, the header stays
+   in its normal, fully visible state. */
+#site-header.header-fade-init {
+  opacity: 0;
+  transform: translateY(-14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#site-header.header-fade-init.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .site-header__inner {
   display: flex;
   align-items: center;

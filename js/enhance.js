@@ -227,10 +227,35 @@
     });
   }
 
+  /* ---------------------------------------------------------------------
+   * Header fade-in on scroll
+   * ------------------------------------------------------------------- */
+  function initHeaderFadeIn() {
+    const header = document.getElementById("site-header");
+    if (!header || prefersReducedMotion) return;
+    header.classList.add("header-fade-init");
+
+    let revealed = false;
+    function reveal() {
+      if (revealed) return;
+      revealed = true;
+      header.classList.add("is-visible");
+      window.removeEventListener("scroll", reveal);
+    }
+
+    if (window.scrollY > 4) {
+      reveal();
+    } else {
+      window.addEventListener("scroll", reveal, { passive: true });
+      setTimeout(reveal, 1200);
+    }
+  }
+
   initReveal();
   initScrollspy();
   initFloatingActions();
   initReadingTime();
   initCaseTocSpy();
   initCopyButtons();
+  initHeaderFadeIn();
 })();
