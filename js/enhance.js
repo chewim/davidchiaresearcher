@@ -26,7 +26,7 @@
           copied: "Copiado",
         };
 
-  const homePage = lang === "en" ? "index-en.html" : "index.html";
+  const homePage = lang === "es" ? "index-es.html" : "index.html";
   const contactHref = page === "home" ? "#contacto" : `${homePage}#contacto`;
 
   /* ---------------------------------------------------------------------

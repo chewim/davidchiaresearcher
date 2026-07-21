@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pujobaixo — De la intención de compartir coche a la publicación real de un viaje · David Chia</title>
+  <meta name="description" content="Investigación sobre por qué mucha gente decía que compartiría coche entre el Berguedà y Barcelona, pero muy pocos llegaban a publicar un trayecto en Pujobaixo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="case">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header id="site-header"></header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <p class="breadcrumb">
+          <a href="index-es.html#investigaciones">Investigaciones</a> <span aria-hidden="true">/</span> <span>Pujobaixo</span>
+        </p>
+        <span class="case-hero__client">Pujobaixo</span>
+        <h1>De la intención de compartir coche a la publicación real de un viaje</h1>
+        <p class="case-hero__desc">
+          Pujobaixo conecta conductores y pasajeros que hacen el trayecto entre el Berguedà y Barcelona
+          para repartir el coste del viaje (unos 42 € ida y vuelta). Publicar un trayecto es gratis, no
+          compromete a nada y el acuerdo se cierra por WhatsApp. Casi todo el mundo decía que
+          compartiría coche; muy pocos llegaban a publicar uno.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Rol</dt>
+            <dd>UX Researcher</dd>
+          </div>
+          <div>
+            <dt>Duración</dt>
+            <dd>5 semanas</dd>
+          </div>
+          <div>
+            <dt>Métodos</dt>
+            <dd>Entrevistas · Journey map · Test de usabilidad</dd>
+          </div>
+          <div>
+            <dt>Sector</dt>
+            <dd>Movilidad · Marketplace</dd>
+          </div>
+          <div>
+            <dt>Proyecto</dt>
+            <dd><a href="https://www.pujobaixo.cat" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">pujobaixo.cat</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="case-body">
+        <aside class="case-toc" aria-label="Contenido del caso">
+          <a href="#contexto">1. Contexto</a>
+          <a href="#decision-equipo">2. Decisión del equipo</a>
+          <a href="#pregunta">3. Pregunta de investigación</a>
+          <a href="#hipotesis">4. Hipótesis iniciales</a>
+          <a href="#metodologia">5. Metodología</a>
+          <a href="#evidencia">6. Evidencia observada</a>
+          <a href="#insights">7. Patrones e insights</a>
+          <a href="#implicaciones">8. Implicaciones</a>
+          <a href="#decisiones">9. Decisiones tomadas</a>
+          <a href="#resultado">10. Resultado y próximos pasos</a>
+        </aside>
+
+        <div class="case-content">
+          <section class="case-section" id="contexto">
+            <h2><span class="case-section__num">01</span> Contexto</h2>
+            <p class="callout">
+              Casi todo el mundo decía que compartiría coche entre el Berguedà y Barcelona. Muy pocos
+              llegaban a publicar un trayecto.
+            </p>
+            <p>
+              Pujobaixo puede presentarse como una investigación sobre la distancia entre una actitud
+              positiva —«compartiría coche entre el Berguedà y Barcelona»— y la conducta necesaria para
+              que el servicio funcione: publicar plazas disponibles. El contexto territorial justifica el
+              reto: el Berguedà combina municipios dispersos y servicios de movilidad adaptados a zonas de
+              baja demanda, mientras las administraciones refuerzan las conexiones de transporte público
+              con Barcelona. Pujobaixo responde a ese hueco con un modelo deliberadamente ligero: publicar
+              un trayecto es gratis y no compromete a nada, y el acuerdo —incluido el reparto del coste,
+              una referencia de 5 € por persona sobre unos 42 € de ida y vuelta— se cierra directamente
+              por WhatsApp, sin pagos ni reservas dentro de la app.
+            </p>
+          </section>
+
+          <section class="case-section" id="decision-equipo">
+            <h2><span class="case-section__num">02</span> Decisión que debía tomar el equipo</h2>
+            <p>
+              Determinar cómo diseñar el flujo de publicación de un trayecto para que la actitud positiva
+              hacia compartir coche se tradujera en la acción real de publicar plazas, sin añadir fricción
+              ni pedir al conductor un compromiso que todavía no estaba dispuesto a asumir.
+            </p>
+          </section>
+
+          <section class="case-section" id="pregunta">
+            <h2><span class="case-section__num">03</span> Pregunta de investigación</h2>
+            <p>
+              ¿Qué fricciones, motivaciones y señales de confianza determinan que un conductor publique un
+              trayecto recurrente?
+            </p>
+          </section>
+
+          <section class="case-section" id="hipotesis">
+            <h2><span class="case-section__num">04</span> Hipótesis iniciales</h2>
+            <p>
+              El ahorro económico despierta interés, pero no basta para activar la publicación. Para dar
+              el paso, el conductor necesita percibir:
+            </p>
+            <ul>
+              <li>Bajo esfuerzo: publicar un trayecto tiene que sentirse rápido y sencillo.</li>
+              <li>Control sobre la decisión: quién viaja con él lo decide él, no la plataforma.</li>
+              <li>Demanda real: que existan pasajeros interesados esperando, no un tablón vacío.</li>
+            </ul>
+          </section>
+
+          <section class="case-section" id="metodologia">
+            <h2><span class="case-section__num">05</span> Metodología y participantes</h2>
+            <p>
+              La investigación combinó entrevistas semiestructuradas con conductores habituales del
+              trayecto, un mapa del viaje actual (journey map), un test de usabilidad moderado sobre el
+              flujo de publicación, y una encuesta breve para priorizar los patrones detectados en
+              entrevista.
+            </p>
+          </section>
+
+          <section class="case-section" id="evidencia">
+            <h2><span class="case-section__num">06</span> Evidencia observada</h2>
+            <ul>
+              <li>Las entrevistas revelaron hábitos de trayecto, costes percibidos, experiencias previas compartiendo vehículo, y miedos relacionados con desconocidos, el compromiso de repetir o la coordinación de horarios.</li>
+              <li>El journey map situó el momento de mayor fricción no en la falta de interés, sino en el tramo entre "consideraría compartir coche" y "recibir el primer contacto" tras publicar.</li>
+              <li>El test de usabilidad mostró que la propuesta de valor, el propio flujo de publicación y la selección de acompañantes no siempre se entendían sin ayuda.</li>
+              <li>El ahorro (los 42 € del trayecto, hasta 30 € compartiendo tres plazas) generaba interés al explicarlo, pero no era, por sí solo, lo que llevaba a completar la publicación.</li>
+            </ul>
+          </section>
+
+          <section class="case-section" id="insights">
+            <h2><span class="case-section__num">07</span> Patrones e insights</h2>
+            <ul>
+              <li>Las personas no publican únicamente porque compartir sea beneficioso, sino cuando sienten que hacerlo es sencillo, seguro y útil desde el primer trayecto.</li>
+              <li>El ahorro capta la atención, pero el conductor necesita ver el proceso de publicación como algo de bajo esfuerzo antes de completarlo.</li>
+              <li>La sensación de control sobre quién viaja con él pesa tanto como el ahorro económico a la hora de decidirse.</li>
+            </ul>
+          </section>
+
+          <section class="case-section" id="implicaciones">
+            <h2><span class="case-section__num">08</span> Implicaciones para producto</h2>
+            <p>
+              Cerrar la distancia entre la intención y la publicación real no se resolvía explicando mejor
+              el ahorro: exigía reducir el esfuerzo percibido de publicar, dar al conductor control
+              explícito sobre sus acompañantes, y hacer tangible tanto la pérdida de conducir con plazas
+              vacías como la demanda real que esperaba al otro lado.
+            </p>
+          </section>
+
+          <section class="case-section" id="decisiones">
+            <h2><span class="case-section__num">09</span> Decisiones tomadas</h2>
+            <table class="decisions-table">
+              <thead>
+                <tr>
+                  <th scope="col">Decisión</th>
+                  <th scope="col">Justificación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Visualizar el dinero perdido al conducir con plazas vacías (sobre los ~42 € del trayecto)</td>
+                  <td>Convierte una pérdida invisible en un coste tangible y concreto</td>
+                </tr>
+                <tr>
+                  <td>Convertir esa pérdida en ahorro acumulado al compartir (hasta 30 € con tres plazas)</td>
+                  <td>El ahorro proyectado motiva más que el coste puntual de un solo viaje</td>
+                </tr>
+                <tr>
+                  <td>Explicar el proceso de publicación en tres pasos</td>
+                  <td>Reduce el esfuerzo percibido de publicar un trayecto</td>
+                </tr>
+                <tr>
+                  <td>Comunicar que el conductor decide con quién viaja</td>
+                  <td>Da control real sobre la decisión, una de las principales barreras</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="case-section" id="resultado">
+            <h2><span class="case-section__num">10</span> Resultado, limitaciones y próximos pasos</h2>
+            <p>
+              El éxito de estos cambios se mide con la comprensión de la propuesta de valor, la tasa de
+              inicio y finalización del flujo de publicación, el tiempo para completar la tarea, y los
+              contactos generados por cada viaje publicado.
+            </p>
+            <p>
+              <strong>Limitaciones:</strong> la muestra de entrevistas se concentró en conductores
+              habituales ya predispuestos a compartir coche, por lo que no recoge las barreras de quienes
+              descartan la idea desde el principio.
+            </p>
+            <p>
+              <strong>Próximos pasos:</strong> medir las cuatro métricas de éxito tras el rediseño del
+              flujo de publicación, y contrastar si el test de usabilidad se traduce en una mayor tasa de
+              finalización real.
+            </p>
+          </section>
+
+          <section class="case-section" aria-label="Resumen visual del proceso">
+            <h4>Evidencia → Insight → Decisión</h4>
+            <div class="evidence-flow">
+              <div class="evidence-flow__step">
+                <span class="evidence-flow__label">Evidencia</span>
+                <p class="evidence-flow__text">Casi todos decían que compartirían coche; muy pocos llegaban a publicar un trayecto.</p>
+              </div>
+              <div class="evidence-flow__arrow" aria-hidden="true">→</div>
+              <div class="evidence-flow__step">
+                <span class="evidence-flow__label">Insight</span>
+                <p class="evidence-flow__text">No publican solo porque compartir sea beneficioso, sino cuando sienten que hacerlo es sencillo, seguro y útil desde el primer trayecto.</p>
+              </div>
+              <div class="evidence-flow__arrow" aria-hidden="true">→</div>
+              <div class="evidence-flow__step evidence-flow__step--decision">
+                <span class="evidence-flow__label">Decisión</span>
+                <p class="evidence-flow__text">Visualizar el ahorro, explicar el proceso en 3 pasos y dar control sobre los acompañantes.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <section class="case-cta">
+      <div class="container">
+        <span class="eyebrow">¿Seguimos hablando?</span>
+        <h2 style="margin-top: 0.75rem;">¿Tu producto tiene usuarios interesados que nunca dan el paso de usarlo?</h2>
+        <p>Hablemos de cómo investigar esa distancia entre la intención y la acción en tu producto.</p>
+        <a class="btn btn-primary" href="index-es.html#contacto">Hablemos</a>
+      </div>
+    </section>
+
+    <div class="container">
+      <nav class="case-nav" aria-label="Otros casos">
+        <a href="caso-triportation-es.html">
+          <span class="case-nav__label">Caso anterior</span>
+          <span class="case-nav__title">← Triportation</span>
+        </a>
+        <a class="case-nav__next" href="caso-agile-monkeys-es.html">
+          <span class="case-nav__label">Siguiente caso</span>
+          <span class="case-nav__title">Agile Monkeys →</span>
+        </a>
+      </nav>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/components.js"></script>
+  <script src="js/enhance.js"></script>
+</body>
+</html>

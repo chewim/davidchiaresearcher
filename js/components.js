@@ -2,16 +2,16 @@
  * Reusable header/footer injected on every page.
  * Each page sets `document.body.dataset.page` to one of:
  * "home" | "cv" | "case", and `document.documentElement.lang` to "es" or "en".
- * Spanish pages: index.html, caso-*.html, cv.html
- * English pages: index-en.html, caso-*-en.html, cv-en.html
+ * English (default) pages: index.html, caso-*.html, cv.html
+ * Spanish pages: index-es.html, caso-*-es.html, cv-es.html
  */
 (function () {
   const SITE_NAME = "David Chia";
-  const LANG = document.documentElement.lang === "en" ? "en" : "es";
+  const LANG = document.documentElement.lang === "es" ? "es" : "en";
 
-  const HOME_PAGE = LANG === "en" ? "index-en.html" : "index.html";
-  const CV_PAGE = LANG === "en" ? "cv-en.html" : "cv.html";
-  const CV_PDF = LANG === "en" ? "David-Chia-CV-EN.pdf" : "David-Chia-CV.pdf";
+  const HOME_PAGE = LANG === "es" ? "index-es.html" : "index.html";
+  const CV_PAGE = LANG === "es" ? "cv-es.html" : "cv.html";
+  const CV_PDF = LANG === "es" ? "David-Chia-CV-ES.pdf" : "David-Chia-CV.pdf";
 
   const STRINGS = {
     es: {
@@ -62,10 +62,10 @@
   }
 
   // Maps the current file to its counterpart in the other language.
-  // es: name.html <-> en: name-en.html (index.html <-> index-en.html, etc.)
+  // en (default): name.html <-> es: name-es.html (index.html <-> index-es.html, etc.)
   function counterpartFile() {
     const file = location.pathname.split("/").pop() || HOME_PAGE;
-    return LANG === "en" ? file.replace(/-en\.html$/, ".html") : file.replace(/\.html$/, "-en.html");
+    return LANG === "es" ? file.replace(/-es\.html$/, ".html") : file.replace(/\.html$/, "-es.html");
   }
 
   function renderLangSwitch() {

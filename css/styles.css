@@ -1599,6 +1599,7 @@ body.nav-open .floating-actions,
   }
 
   .nav__link {
+    display: block;
     padding: 0.85rem 0.25rem;
     border-bottom: 1.5px solid var(--color-border-soft);
     border-radius: 0;
