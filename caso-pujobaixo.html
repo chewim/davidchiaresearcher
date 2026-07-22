@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <title>Pujobaixo — From a WhatsApp group to a local network · David Chia</title>
-  <meta name="description" content="Pujobaixo grew out of a community that already shared rides between the Berguedà and Barcelona. The research turned that informal coordination into a system able to handle more supply and demand without losing its simplicity." />
+  <title>Pujobaixo — From a WhatsApp experiment to a scalable local network · David Chia</title>
+  <meta name="description" content="Pujobaixo started as a field experiment: a WhatsApp group to observe how supply, demand and matches showed up in a real context, before building a scalable local network." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,11 +24,15 @@
           <a href="index.html#investigaciones">Research</a> <span aria-hidden="true">/</span> <span>Pujobaixo</span>
         </p>
         <span class="case-hero__client reveal reveal--sm page-intro__eyebrow">Pujobaixo</span>
-        <h1 class="reveal-title page-intro__title">From a WhatsApp group to a local network for sharing rides</h1>
+        <h1 class="reveal-title page-intro__title">From a WhatsApp experiment to a scalable local network</h1>
         <p class="case-hero__desc reveal page-intro__desc">
-          Pujobaixo grew out of a community that already shared rides between the Berguedà and Barcelona.
-          The challenge wasn't convincing people to carpool, but turning informal coordination into a
-          system able to handle more supply and demand without losing its simplicity.
+          Pujobaixo started as a field experiment: we created a WhatsApp group with people who regularly
+          made the trip between the Berguedà and Barcelona, to observe how supply, demand and matches
+          showed up in a real context.
+        </p>
+        <p class="case-hero__desc reveal page-intro__desc">
+          The challenge was turning those learnings into a network able to handle more trips without
+          losing the simplicity and flexibility of the original coordination.
         </p>
 
         <dl class="case-meta reveal page-intro__meta">
@@ -37,19 +41,19 @@
             <dd>UX Researcher · Product Owner</dd>
           </div>
           <div>
-            <dt>Duration</dt>
+            <dt>Project</dt>
             <dd>Ongoing personal project</dd>
           </div>
           <div>
             <dt>Methods</dt>
-            <dd>Contextual observation · Conversation analysis · Service modeling · Iterative evaluation</dd>
+            <dd>Field experiment · Service prototype · Contextual observation · Conversation analysis · Iterative evaluation</dd>
           </div>
           <div>
             <dt>Sector</dt>
             <dd>Mobility · Community · Marketplace</dd>
           </div>
           <div>
-            <dt>Project</dt>
+            <dt>Product</dt>
             <dd><a href="https://www.pujobaixo.cat" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">pujobaixo.cat</a></dd>
           </div>
         </dl>
@@ -59,11 +63,11 @@
     <div class="container">
       <div class="case-body">
         <aside class="case-toc" aria-label="Case contents">
-          <a href="#contexto">1. Context</a>
-          <a href="#decision-equipo">2. Team decision</a>
+          <a href="#contexto">1. Context and opportunity</a>
+          <a href="#decision-equipo">2. Decision we had to make</a>
           <a href="#pregunta">3. Research question</a>
           <a href="#hipotesis">4. Initial hypotheses</a>
-          <a href="#metodologia">5. Methodology and participants</a>
+          <a href="#metodologia">5. Experiment and methodology</a>
           <a href="#evidencia">6. Evidence observed</a>
           <a href="#insights">7. Patterns and insights</a>
           <a href="#implicaciones">8. Product implications</a>
@@ -73,110 +77,129 @@
 
         <div class="case-content">
           <section class="case-section" id="contexto">
-            <h2><span class="case-section__num">01</span> Context</h2>
+            <h2><span class="case-section__num">01</span> Context and opportunity</h2>
             <p>
-              Before turning the idea into a product, we created a WhatsApp group with community members
-              who frequently shared their trips between the Berguedà and Barcelona.
+              The habit of sharing rides already existed within the community. Some people used their
+              regular trips between the Berguedà and Barcelona to share available seats and split the
+              cost of the journey.
             </p>
             <p>
-              Posts were simple: they usually stated the day, the origin, and the direction of the trip.
-              Interested people finished coordinating directly and split the trip's costs, with no fixed
-              rates or formal payment system.
+              However, we had no structured information about how often these trips happened, how
+              supply and demand related to each other, or what conditions made a match more likely.
             </p>
             <p>
-              This system worked within a small community, but it started to show limitations as the
-              number of messages and coordination needs grew.
+              Before building a platform, we needed to observe how this dynamic actually worked.
             </p>
             <p>
-              Pujobaixo's goal was to make better use of vehicles that were already making the trip,
-              reduce trips with empty seats, and build a local network with enough supply and demand to
-              enable matches.
+              We created a WhatsApp group with people who made the trip frequently. The group let members
+              offer or request rides by sharing basic information such as the day, the origin, and the
+              direction of the trip. Interested people finished coordinating directly.
+            </p>
+            <p>
+              The goal wasn't to introduce a new behavior, but to understand an existing practice and
+              study how it could become a more useful, scalable local network.
             </p>
           </section>
 
           <section class="case-section" id="decision-equipo">
-            <h2><span class="case-section__num">02</span> Decision the team had to make</h2>
+            <h2><span class="case-section__num">02</span> Decision we had to make</h2>
             <p>
-              We had to determine how to move an informal WhatsApp dynamic into a digital product without
-              adding unnecessary processes or removing the flexibility that made the community work.
+              We had to decide whether informal coordination through WhatsApp could evolve into a digital
+              product able to serve a wider community.
             </p>
-            <p>
-              The decision wasn't just about designing an interface. We needed to identify:
-            </p>
+            <p>To do that, we needed to understand:</p>
             <ul>
               <li>What information was essential to find a match.</li>
-              <li>What parts of the coordination could be structured.</li>
-              <li>What interactions needed to stay open and flexible.</li>
-              <li>How to make available supply and demand visible.</li>
+              <li>How supply and demand actually showed up.</li>
+              <li>Which parts of the coordination created the most effort.</li>
+              <li>What dynamics we needed to preserve.</li>
+              <li>What elements needed a specific structure.</li>
+              <li>Whether there was enough recurrence to justify a local network.</li>
             </ul>
+            <p>
+              The decision wasn't just about designing an interface. First, we needed to understand what
+              system was already emerging within the community.
+            </p>
           </section>
 
           <section class="case-section" id="pregunta">
             <h2><span class="case-section__num">03</span> Research question</h2>
             <p>
-              How can we turn the informal coordination of a community that shares rides into a scalable
-              network, keeping it simple and reducing the effort needed to find a match?
+              How can we turn informal coordination of shared rides into a scalable network, keeping it
+              simple and reducing the effort needed to find a match?
             </p>
-            <p>
-              As a secondary question, we examined which elements of the existing behavior we needed to
-              preserve, so as not to turn a flexible practice into an overly rigid process.
-            </p>
+            <p>As secondary questions, we examined:</p>
+            <ul>
+              <li>What information do drivers and passengers share spontaneously?</li>
+              <li>What makes it hard to know if a trip is still available?</li>
+              <li>How do supply and demand fluctuate?</li>
+              <li>What should the product solve, and what can stay in direct conversation?</li>
+              <li>What conditions make a match more likely to appear?</li>
+            </ul>
           </section>
 
           <section class="case-section" id="hipotesis">
             <h2><span class="case-section__num">04</span> Initial hypotheses</h2>
+            <p>We started from five hypotheses:</p>
             <ul>
               <li>There was enough recurring trip volume to build a local network.</li>
               <li>Centralizing active trips would make it easier to find matches.</li>
-              <li>Structuring information would reduce the conversations needed to coordinate each trip.</li>
-              <li>Final coordination needed to stay on a familiar channel like WhatsApp.</li>
-              <li>Savings could reinforce the value proposition, though they weren't the only motivation to carpool.</li>
+              <li>Structuring information would reduce the effort of coordination.</li>
+              <li>Final communication needed to stay on a familiar, flexible channel.</li>
+              <li>Sharing costs could reinforce the value proposition, though it wasn't the only motivation to carpool.</li>
             </ul>
+            <p>
+              The WhatsApp group let us test these hypotheses against real behavior, not only stated
+              opinions.
+            </p>
           </section>
 
           <section class="case-section" id="metodologia">
-            <h2><span class="case-section__num">05</span> Methodology and participants</h2>
+            <h2><span class="case-section__num">05</span> Experiment and methodology</h2>
             <p>
-              The research started from observing a WhatsApp group made up of community members who
-              already regularly shared their trips.
+              We used the WhatsApp group as a field experiment and a low-fidelity service prototype.
             </p>
             <p>
-              Instead of only asking whether they would use the service, we analyzed behavior that was
-              already happening:
+              Instead of only asking whether people would use a shared-mobility platform, we created an
+              environment where coordination could happen and observed how its members behaved.
             </p>
+            <p>We analyzed:</p>
             <ul>
-              <li>What information they included when offering or requesting a trip.</li>
-              <li>How interested people responded.</li>
-              <li>At what points coordination moved to private messages.</li>
-              <li>What difficulties came up when searching for past trips.</li>
+              <li>How often trips were offered or requested.</li>
+              <li>What information people posted spontaneously.</li>
+              <li>How they expressed origin, destination, and day of travel.</li>
+              <li>How matches showed up.</li>
+              <li>What information was missing to make a decision.</li>
+              <li>At what point coordination moved to private messages.</li>
+              <li>What difficulties came up as activity increased.</li>
               <li>How supply and demand varied by day and direction.</li>
-              <li>What made it hard to identify an available match.</li>
             </ul>
             <p>
-              These findings were progressively carried over into the flow design and the build of the
-              first working product.
+              The experiment let us study the dynamic before investing in a more complex product.
             </p>
           </section>
 
           <section class="case-section" id="evidencia">
             <h2><span class="case-section__num">06</span> Evidence observed</h2>
             <p>
-              The group confirmed there was a community willing to share rides and split trip costs.
+              The group confirmed there were people willing to share their trips and split costs when
+              they found a suitable match.
             </p>
             <p>
-              However, a chronological conversation didn't work as a management system:
+              It also revealed the limits of using a chronological conversation as a coordination system:
             </p>
             <ul>
               <li>It was hard to tell which trips were still available.</li>
-              <li>Necessary information wasn't always complete.</li>
-              <li>Older messages got buried under new conversations.</li>
-              <li>Finding a match depended on manually scrolling through the group.</li>
+              <li>Information showed up unevenly.</li>
+              <li>Some posts didn't include all the necessary data.</li>
+              <li>Earlier trips got buried under new messages.</li>
+              <li>Finding a match required manually scrolling through the conversation.</li>
               <li>There was no combined view of supply and demand.</li>
-              <li>Coordination got harder as activity increased.</li>
+              <li>As activity increased, coordination lost clarity.</li>
             </ul>
             <p>
-              The group solved communication between people, but it didn't allow the network to be
-              organized or scaled.
+              WhatsApp made contact between people easy, but it didn't allow the network to be organized
+              at a larger scale.
             </p>
             <figure class="case-figure">
               <img src="assets/pujobaixo-whatsapp-a-app.jpeg" alt="Comparison between the WhatsApp messages used to coordinate trips and the first Pujobaixo trips screen" loading="lazy" />
@@ -187,55 +210,76 @@
           <section class="case-section" id="insights">
             <h2><span class="case-section__num">07</span> Patterns and insights</h2>
 
-            <h3>1. The behavior already existed</h3>
+            <h3>1. The habit existed, but the network didn't — yet</h3>
             <p>
-              We didn't need to create the carpooling habit from scratch. The community was already doing
-              it whenever it found a suitable match.
+              People were already willing to share trips when they found a suitable match.
+            </p>
+            <p>
+              The opportunity wasn't creating that behavior, but connecting it within a more visible,
+              recurring and scalable system.
             </p>
 
-            <h3>2. Coordination was the main friction</h3>
+            <h3>2. The main friction was finding the match</h3>
             <p>
-              The problem wasn't only a lack of interest, but the effort needed to locate a compatible
-              trip, check whether it was still available, and complete the missing information.
+              The problem wasn't only a lack of supply or demand.
+            </p>
+            <p>
+              The difficulty was in locating a compatible trip, checking whether it was still active, and
+              completing the information needed to coordinate it.
             </p>
 
-            <h3>3. Scaling required structuring, not complicating</h3>
+            <h3>3. WhatsApp validated the dynamic, but couldn't scale it</h3>
             <p>
-              The product had to organize trips without turning a simple practice into a rigid or
-              bureaucratic process.
+              The group worked as the service's first prototype and let us observe real behavior.
+            </p>
+            <p>
+              However, the conversation's chronological structure wasn't suited to managing more users,
+              trips, and simultaneous matches.
             </p>
 
-            <h3>4. The network's visibility shaped its usefulness</h3>
+            <h3>4. Scaling required structuring, not complicating</h3>
             <p>
-              For Pujobaixo to generate value, drivers and passengers needed to see active supply and
-              demand in each direction of the trip.
+              The product had to organize information and reduce search effort without turning a
+              flexible practice into a rigid process.
             </p>
 
-            <h3>5. WhatsApp still served a useful function</h3>
+            <h3>5. The network's visibility shaped its usefulness</h3>
             <p>
-              The platform could organize discovery and enable matching, while WhatsApp let people keep a
-              final coordination step that was direct, flexible, and familiar.
+              A shared-mobility network needs drivers and passengers to quickly identify what supply and
+              demand exist in each direction and moment.
             </p>
           </section>
 
           <section class="case-section" id="implicaciones">
             <h2><span class="case-section__num">08</span> Product implications</h2>
             <p>
-              The research showed that Pujobaixo shouldn't fully replace the existing behavior, but
+              The research showed that Pujobaixo shouldn't fully replace the existing dynamic, but
               structure the parts that generated the most effort.
             </p>
             <p>
-              The main opportunity was centralizing active trips, standardizing the necessary information,
-              and clearly distinguishing between those offering seats and those looking for a ride.
+              The main opportunity was centralizing active trips, standardizing the necessary
+              information, and clearly distinguishing between those offering seats and those looking for
+              a ride.
             </p>
             <p>
-              It was also important to keep a lightweight model: the platform would enable the match, but
-              people would keep control over the decision to travel together and over final coordination.
+              The platform had to make discovering matches easier, but people needed to keep control over
+              who they traveled with and how they finished coordinating.
             </p>
             <p>
-              Savings had to be communicated as a tangible benefit of using empty seats, without reducing
-              the value proposition to a financial transaction. The main purpose remained optimizing trips
-              and strengthening a local shared-mobility network.
+              We also needed to keep a lightweight model. There was no need to build a closed booking,
+              payment, or automatic-assignment system from the start.
+            </p>
+            <p>Pujobaixo had to act as an organizing layer over a behavior that already worked:</p>
+            <ul>
+              <li>Order supply and demand.</li>
+              <li>Make active trips visible.</li>
+              <li>Reduce manual searching.</li>
+              <li>Make contact easier.</li>
+              <li>Prepare the network to bring in more users and trips.</li>
+            </ul>
+            <p>
+              Savings were incorporated as a tangible benefit of using empty seats, without reducing the
+              value proposition to a financial transaction.
             </p>
           </section>
 
@@ -243,45 +287,62 @@
             <h2><span class="case-section__num">09</span> Decisions made</h2>
 
             <h3>Separating supply and demand</h3>
+            <p>We organized trips into two categories:</p>
+            <ul>
+              <li>Offering, for drivers with available seats.</li>
+              <li>Needing, for people looking for a ride.</li>
+            </ul>
             <p>
-              We organized trips into two categories: Offering and Needing. This made it easy to quickly
-              distinguish between drivers with available seats and people looking for a ride.
+              This separation made it easy to quickly identify what type of post the user was looking at.
             </p>
 
             <h3>Structuring trip information</h3>
-            <p>
-              Each post grouped together the data needed to evaluate a potential match: origin,
-              destination, date, time, seats, and direction of the route.
-            </p>
+            <p>Each post grouped together the data needed to evaluate a potential match:</p>
+            <ul>
+              <li>Origin.</li>
+              <li>Destination.</li>
+              <li>Date.</li>
+              <li>Time.</li>
+              <li>Direction of the route.</li>
+              <li>Number of seats.</li>
+              <li>Other relevant information.</li>
+            </ul>
+            <p>This reduced the need to fill in data across several conversations.</p>
 
             <h3>Centralizing active trips</h3>
             <p>
-              Trips stopped depending on the chronological order of a conversation and started appearing
-              as searchable, up-to-date posts.
+              Trips stopped depending on the chronological order of a group and started appearing as
+              searchable posts.
+            </p>
+            <p>
+              The network could offer a clearer view of which trips were available at any given moment.
             </p>
 
-            <h3>Keeping contact on WhatsApp</h3>
+            <h3>Keeping WhatsApp for final coordination</h3>
             <p>
-              Once a match was found, people could contact each other directly to finish agreeing on the
-              details. This narrowed the product's initial scope and preserved a dynamic the community
-              already knew.
+              Once a match was found, people could contact each other directly through WhatsApp.
+            </p>
+            <p>
+              This let us narrow the product's initial scope and preserve a channel the community already
+              knew.
             </p>
 
-            <h3>Giving users control over their posts</h3>
+            <h3>Giving users control over availability</h3>
+            <p>Users could manage and cancel their own trips.</p>
             <p>
-              Users could check, manage, or cancel their own trips, making it more visible which offers
-              were actually still available.
+              This decision helped keep information up to date and reduced uncertainty about which posts
+              were still active.
             </p>
 
-            <h3>Making the shared benefit visible</h3>
+            <h3>Preparing the solution to scale</h3>
             <p>
-              The product's messaging incorporated the savings from splitting costs, along with the
-              collective benefit of reducing vehicles with empty seats.
+              The platform turned a manually managed experiment into a digital network able to bring in
+              more drivers, passengers, and trips.
             </p>
 
             <p class="callout">
-              The new flow was structured into a simple sequence: post a need or offer → find an active
-              match → coordinate the trip on WhatsApp.
+              The main flow was reduced to a simple sequence: post an offer or need → find an active
+              match → coordinate the trip directly.
             </p>
             <figure class="case-figure">
               <img src="assets/pujobaixo-v1-landing.jpg" alt="Pujobaixo's first advertising screen (v1), with the message ¿Baixes a Bcn amb cotxe? ¿Puges al Berguedà?" loading="lazy" />
@@ -292,44 +353,52 @@
           <section class="case-section" id="resultado">
             <h2><span class="case-section__num">10</span> Outcome, limitations, and next steps</h2>
             <p>
-              Pujobaixo turned scattered coordination into a working product able to centralize supply and
-              demand for trips between the Berguedà and Barcelona.
+              Pujobaixo turned a WhatsApp coordination experiment into a working product able to
+              centralize supply and demand for trips between the Berguedà and Barcelona.
             </p>
             <figure class="case-figure">
               <img src="assets/pujobaixo-version-actual.jpg" alt="Pujobaixo's current landing page, with the Post my seats and Looking for a ride options" loading="lazy" />
               <figcaption>Current version of pujobaixo.cat, with separate options to post seats or look for a ride.</figcaption>
             </figure>
             <p>
-              The research's main contribution was identifying that the value wasn't in inventing a new
+              The research's main contribution was showing that the value wasn't in inventing a new
               behavior, but in reducing the coordination cost of a practice that already existed.
             </p>
+            <p>The product made it possible to:</p>
+            <ul>
+              <li>Structure each trip's minimum information.</li>
+              <li>Differentiate supply and demand.</li>
+              <li>Make active trips visible.</li>
+              <li>Make it easier to search for matches.</li>
+              <li>Keep a direct final coordination step.</li>
+              <li>Prepare the dynamic to reach a wider community.</li>
+            </ul>
             <p>
-              The product made it possible to formalize the minimum information, make active trips
-              visible, and prepare the dynamic to bring in a wider community.
-            </p>
-            <p>
-              <strong>Limitations:</strong> the initial observation focused on people who were already
-              predisposed to carpool and belonged to one specific community. This helped us understand the
-              behavior of active users, but it doesn't yet explain:
+              <strong>Limitations:</strong> the experiment ran within one specific community, with people
+              who already showed some predisposition to carpool. This phase helped us understand active
+              users, but it still doesn't fully explain:
             </p>
             <ul>
               <li>The barriers of people who have never carpooled.</li>
               <li>Trust needs between strangers.</li>
               <li>How the network behaves with a larger volume of users.</li>
-              <li>The balance needed between supply and demand to generate recurring matches.</li>
+              <li>The minimum balance needed between supply and demand.</li>
+              <li>How many matches actually turned into completed trips.</li>
             </ul>
             <p>
-              <strong>Next steps:</strong> the next phase should analyze the product's real behavior
+              <strong>Next steps:</strong> the next phase should evaluate the network's real behavior
               through:
             </p>
             <ul>
               <li>Number of trips offered and requested.</li>
               <li>Matches generated by direction and time slot.</li>
-              <li>Time elapsed until first contact.</li>
               <li>Percentage of posts that receive a response.</li>
+              <li>Time to first contact.</li>
               <li>Trips canceled or no longer available.</li>
               <li>Users who post again.</li>
               <li>Ratio between active drivers and passengers.</li>
+              <li>Trips that end up actually happening.</li>
+              <li>Estimated savings per vehicle and per user.</li>
             </ul>
           </section>
 
@@ -338,23 +407,24 @@
             <div class="evidence-flow">
               <div class="evidence-flow__step">
                 <span class="evidence-flow__label">Evidence</span>
-                <p class="evidence-flow__text">The community already shared trips, but it was hard to know which ones were still available and to find a match within the group.</p>
+                <p class="evidence-flow__text">The experiment confirmed recurring trips and willingness to share them, but finding available trips within a conversation took too much effort.</p>
               </div>
               <div class="evidence-flow__arrow" aria-hidden="true">→</div>
               <div class="evidence-flow__step">
                 <span class="evidence-flow__label">Insight</span>
-                <p class="evidence-flow__text">The main barrier wasn't a lack of willingness to carpool, but the effort of coordinating supply and demand through an unstructured conversation.</p>
+                <p class="evidence-flow__text">The habit of carpooling already existed. What was missing was a structure able to connect and make visible a larger supply and demand.</p>
               </div>
               <div class="evidence-flow__arrow" aria-hidden="true">→</div>
               <div class="evidence-flow__step evidence-flow__step--decision">
                 <span class="evidence-flow__label">Decision</span>
-                <p class="evidence-flow__text">Centralize active trips, separate supply and demand, structure the necessary information, and keep WhatsApp for final coordination.</p>
+                <p class="evidence-flow__text">Turn the experiment into a digital network that centralized active trips, made matches easier to find, and kept WhatsApp for final coordination.</p>
               </div>
             </div>
             <p class="callout">
-              <strong>Key takeaway:</strong> scaling a community practice doesn't always mean replacing it.
-              Sometimes it means identifying what already works, structuring only the friction points, and
-              preserving the flexibility that made the original behavior possible.
+              <strong>Key takeaway:</strong> scaling a community practice doesn't always mean replacing
+              it. In this case, it meant observing what already worked, structuring only the friction
+              points, and turning informal coordination into a network ready to handle more supply and
+              demand without losing its flexibility.
             </p>
           </section>
         </div>
