@@ -31,6 +31,31 @@
   --space-5: 3rem;
   --space-6: 4.5rem;
   --space-7: 6.5rem;
+
+  /* Motion system — single source of truth for every animated element. */
+  --motion-duration-fast: 320ms;
+  --motion-duration-base: 560ms;
+  --motion-duration-slow: 760ms;
+
+  --motion-delay-xs: 60ms;
+  --motion-delay-sm: 100ms;
+  --motion-delay-md: 160ms;
+
+  --motion-distance-sm: 8px;
+  --motion-distance-md: 16px;
+  --motion-distance-lg: 24px;
+
+  --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 720px) {
+  :root {
+    --motion-duration-fast: 260ms;
+    --motion-duration-base: 460ms;
+    --motion-duration-slow: 620ms;
+    --motion-distance-md: 12px;
+    --motion-distance-lg: 16px;
+  }
 }
 
 /* ==========================================================================
@@ -51,8 +76,11 @@ html {
   html {
     scroll-behavior: auto;
   }
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
@@ -271,18 +299,43 @@ p {
   border-bottom: 2px solid var(--color-text);
 }
 
-/* Progressive-enhancement entrance: JS adds .header-fade-init, then
-   .is-visible on first scroll. If JS never runs, the header stays
-   in its normal, fully visible state. */
-#site-header.header-fade-init {
-  opacity: 0;
-  transform: translateY(-14px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+/* Navbar entrance — animates the injected content wrapper, not the empty
+   #site-header shell, so it only ever plays once real nav content exists
+   (components.js sets .site-header__inner's innerHTML synchronously,
+   essentially immediately on load — never gated by scroll or a timer).
+   Max displacement is 8px so it reads as an instant presence. */
+#site-header .site-header__inner {
+  animation: nav-in var(--motion-duration-fast) var(--motion-ease-standard) both;
 }
 
-#site-header.header-fade-init.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--motion-distance-sm) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #site-header .site-header__inner {
+    animation: none;
+  }
+}
+
+/* Scroll state — added by js/enhance.js once the page scrolls past a
+   small threshold. Shrinks the header slightly and adds a translucent
+   backdrop now that page content sits behind it. */
+#site-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+#site-header.is-scrolled .site-header__inner {
+  padding-block: 0.6rem;
 }
 
 .site-header__inner {
@@ -293,6 +346,7 @@ p {
   max-width: var(--container-w);
   margin-inline: auto;
   padding-inline: var(--space-3);
+  transition: padding-block var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
 .logo {
@@ -1319,17 +1373,119 @@ p {
 }
 
 /* ==========================================================================
-   Scroll reveal (progressive enhancement — classes added by js/enhance.js)
+   Scroll reveal — 3 families only. Every animated entrance on the site
+   uses one of these three; do not add a fourth without strong reason.
    ========================================================================== */
+
+/* A. Vertical reveal — titles, paragraphs, metadata, editorial content. */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(var(--motion-distance-md));
+  transition:
+    opacity var(--motion-duration-base) var(--motion-ease-standard),
+    transform var(--motion-duration-base) var(--motion-ease-standard);
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: none;
+  transform: translateY(0);
+}
+
+/* Smaller-hierarchy variant (metadata, tags, quick-read fragments):
+   shorter distance, faster settle. */
+.reveal--sm {
+  transform: translateY(var(--motion-distance-sm));
+  transition-duration: var(--motion-duration-fast);
+}
+
+/* B. Title mask reveal — hero H1, case H1, page H1 only. Each line is
+   wrapped by js/enhance.js in .reveal-line-mask > .reveal-line-inner. */
+.reveal-title .reveal-line-mask {
+  display: block;
+  overflow: hidden;
+}
+
+.reveal-title .reveal-line-inner {
+  display: block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition:
+    opacity var(--motion-duration-slow) var(--motion-ease-standard),
+    transform var(--motion-duration-slow) var(--motion-ease-standard);
+}
+
+.reveal-title.is-visible .reveal-line-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fallback: if JS never splits the title into lines, treat it as a
+   plain vertical reveal so content is never permanently hidden. */
+.reveal-title:not(.is-split) {
+  opacity: 0;
+  transform: translateY(var(--motion-distance-md));
+  transition:
+    opacity var(--motion-duration-base) var(--motion-ease-standard),
+    transform var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.reveal-title:not(.is-split).is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* C. Visual reveal — images, mockups, diagrams, featured cards.
+   Opacity + minimal lift + a hint of scale. No zoom, no rotation. */
+.reveal-visual {
+  opacity: 0;
+  transform: translateY(var(--motion-distance-md)) scale(0.98);
+  transition:
+    opacity var(--motion-duration-slow) var(--motion-ease-standard),
+    transform var(--motion-duration-slow) var(--motion-ease-standard);
+}
+
+.reveal-visual.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Groups: stagger-item delay is set inline by js/enhance.js (index * a
+   per-context step), capped so a group never spans more than ~560ms. */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(var(--motion-distance-md));
+  transition:
+    opacity var(--motion-duration-base) var(--motion-ease-standard),
+    transform var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.stagger-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Page-intro sequence — fixed delay bands for the above-the-fold entrance
+   shared by every page (hero / case-hero / cv-header). Order: eyebrow,
+   title, description, metadata, first visual. Total sequence stays
+   under ~350ms so the page is interactive well before 1.5s. */
+.page-intro__eyebrow {
+  transition-delay: 0ms;
+}
+
+.page-intro__title {
+  transition-delay: 100ms;
+}
+
+.page-intro__desc {
+  transition-delay: 160ms;
+}
+
+.page-intro__meta {
+  transition-delay: 220ms;
+}
+
+.page-intro__visual {
+  transition-delay: 300ms;
 }
 
 /* ==========================================================================
@@ -1703,5 +1859,45 @@ body.nav-open .floating-actions,
 @media (max-width: 480px) {
   .case-meta {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Page transitions — native cross-document View Transitions API.
+   Zero JS, zero risk: unsupported browsers simply navigate normally.
+   ========================================================================== */
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: page-transition-out calc(var(--motion-duration-fast) * 0.7) var(--motion-ease-standard) both;
+  }
+
+  ::view-transition-new(root) {
+    animation: page-transition-in var(--motion-duration-base) var(--motion-ease-standard) both;
+  }
+}
+
+@keyframes page-transition-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(calc(var(--motion-distance-sm) * -1));
+  }
+}
+
+@keyframes page-transition-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--motion-distance-sm));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

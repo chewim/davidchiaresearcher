@@ -11,7 +11,7 @@
 
   const HOME_PAGE = LANG === "es" ? "index-es.html" : "index.html";
   const CV_PAGE = LANG === "es" ? "cv-es.html" : "cv.html";
-  const CV_PDF = LANG === "es" ? "David-Chia-CV-ES.pdf" : "David-Chia-CV.pdf";
+  const CV_PDF = "David-Chia-CV.pdf";
 
   const STRINGS = {
     es: {
@@ -139,7 +139,7 @@
     }).join("");
 
     mount.innerHTML = `
-      <div class="site-footer__inner">
+      <div class="site-footer__inner reveal">
         <div class="site-footer__row">
           <a class="site-footer__logo" href="${HOME_PAGE}">${SITE_NAME}<span>.</span></a>
           <nav class="footer-nav" aria-label="${t.footerNav}">${navLinks}</nav>
