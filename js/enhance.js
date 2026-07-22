@@ -38,39 +38,47 @@
    * ------------------------------------------------------------------- */
   function splitTitleLines(el) {
     if (el.dataset.split === "1") return;
-    const words = el.textContent.trim().split(/\s+/).filter(Boolean);
+    const text = el.textContent.trim().replace(/\s+/g, " ");
+    const words = text.split(" ").filter(Boolean);
     if (words.length < 2) return; // nothing meaningful to split
 
-    // Measure with plain inline spans + sibling space text nodes so the
-    // browser wraps exactly as it would for normal text.
-    el.textContent = "";
-    const wordSpans = words.map((word) => {
-      const span = document.createElement("span");
-      span.textContent = word;
-      el.appendChild(span);
-      el.appendChild(document.createTextNode(" "));
-      return span;
-    });
-
+    // Measure line breaks on the actual continuous text run (not separate
+    // word spans): splitting words into sibling <span> + text-node pairs can
+    // shape/wrap a hair differently than the final single text node once
+    // reassembled, which occasionally let a word "fit" during measurement
+    // and then wrap inside its own locked-in line. Range() over the real
+    // text node sidesteps that mismatch entirely.
+    el.textContent = text;
+    const textNode = el.firstChild;
+    const range = document.createRange();
     const lines = [];
+    let lineStart = 0;
     let lastTop = null;
-    wordSpans.forEach((span) => {
-      const top = span.offsetTop;
+    let pos = 0;
+    words.forEach((word) => {
+      const start = pos;
+      const end = start + word.length;
+      pos = end + 1; // skip the following space
+      range.setStart(textNode, start);
+      range.setEnd(textNode, end);
+      const top = range.getBoundingClientRect().top;
+      if (lastTop === null) lastTop = top;
       if (top !== lastTop) {
-        lines.push([]);
+        lines.push(text.slice(lineStart, start).trim());
+        lineStart = start;
         lastTop = top;
       }
-      lines[lines.length - 1].push(span.textContent);
     });
+    lines.push(text.slice(lineStart).trim());
 
     el.textContent = "";
-    lines.forEach((lineWords, i) => {
+    lines.forEach((lineText, i) => {
       const mask = document.createElement("span");
       mask.className = "reveal-line-mask";
       const inner = document.createElement("span");
       inner.className = "reveal-line-inner";
       inner.style.transitionDelay = `${i * 70}ms`;
-      inner.textContent = lineWords.join(" ");
+      inner.textContent = lineText;
       mask.appendChild(inner);
       el.appendChild(mask);
     });
@@ -181,11 +189,18 @@
     // are loaded — otherwise it locks in line breaks based on the fallback
     // font's metrics (visible as an awkward wrap/gap once Inter swaps in).
     // Race against a short timeout so a slow or unsupported fonts API never
-    // blocks the reveal system.
+    // blocks the reveal system. A resolved fonts.ready promise doesn't
+    // guarantee the browser has already repainted with the new font at that
+    // exact tick, so wait two animation frames before measuring.
+    function runAfterLayout() {
+      requestAnimationFrame(() => requestAnimationFrame(run));
+    }
     if (document.fonts && document.fonts.status !== "loaded") {
-      Promise.race([document.fonts.ready, new Promise((resolve) => setTimeout(resolve, 500))]).then(run);
+      Promise.race([document.fonts.ready, new Promise((resolve) => setTimeout(resolve, 500))]).then(
+        runAfterLayout
+      );
     } else {
-      run();
+      runAfterLayout();
     }
   }
 
