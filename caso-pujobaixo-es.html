@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pujobaixo — De la intención de compartir coche a la publicación real de un viaje · David Chia</title>
-  <meta name="description" content="Investigación sobre por qué mucha gente decía que compartiría coche entre el Berguedà y Barcelona, pero muy pocos llegaban a publicar un trayecto en Pujobaixo." />
+  <title>Pujobaixo — De un grupo de WhatsApp a una red local · David Chia</title>
+  <meta name="description" content="Pujobaixo nació a partir de una comunidad que ya compartía desplazamientos entre el Berguedà y Barcelona. La investigación transformó esa coordinación informal en un sistema capaz de gestionar más oferta y demanda sin perder su sencillez." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,30 +22,30 @@
           <a href="index-es.html#investigaciones">Investigaciones</a> <span aria-hidden="true">/</span> <span>Pujobaixo</span>
         </p>
         <span class="case-hero__client">Pujobaixo</span>
-        <h1>De la intención de compartir coche a la publicación real de un viaje</h1>
+        <h1>De un grupo de WhatsApp a una red local para compartir trayectos</h1>
         <p class="case-hero__desc">
-          Pujobaixo conecta conductores y pasajeros que hacen el trayecto entre el Berguedà y Barcelona
-          para repartir el coste del viaje (unos 42 € ida y vuelta). Publicar un trayecto es gratis, no
-          compromete a nada y el acuerdo se cierra por WhatsApp. Casi todo el mundo decía que
-          compartiría coche; muy pocos llegaban a publicar uno.
+          Pujobaixo nació a partir de una comunidad que ya compartía desplazamientos entre el Berguedà y
+          Barcelona. El reto no era convencer a las personas para que compartieran coche, sino
+          transformar una coordinación informal en un sistema capaz de gestionar más oferta y demanda sin
+          perder su sencillez.
         </p>
 
         <dl class="case-meta">
           <div>
             <dt>Rol</dt>
-            <dd>UX Researcher</dd>
+            <dd>UX Researcher · Product Owner</dd>
           </div>
           <div>
             <dt>Duración</dt>
-            <dd>5 semanas</dd>
+            <dd>Proyecto propio en evolución</dd>
           </div>
           <div>
             <dt>Métodos</dt>
-            <dd>Entrevistas · Journey map · Test de usabilidad</dd>
+            <dd>Observación contextual · Análisis de conversaciones · Modelado del servicio · Evaluación iterativa</dd>
           </div>
           <div>
             <dt>Sector</dt>
-            <dd>Movilidad · Marketplace</dd>
+            <dd>Movilidad · Comunidad · Marketplace</dd>
           </div>
           <div>
             <dt>Proyecto</dt>
@@ -62,10 +62,10 @@
           <a href="#decision-equipo">2. Decisión del equipo</a>
           <a href="#pregunta">3. Pregunta de investigación</a>
           <a href="#hipotesis">4. Hipótesis iniciales</a>
-          <a href="#metodologia">5. Metodología</a>
+          <a href="#metodologia">5. Metodología y participantes</a>
           <a href="#evidencia">6. Evidencia observada</a>
           <a href="#insights">7. Patrones e insights</a>
-          <a href="#implicaciones">8. Implicaciones</a>
+          <a href="#implicaciones">8. Implicaciones para producto</a>
           <a href="#decisiones">9. Decisiones tomadas</a>
           <a href="#resultado">10. Resultado y próximos pasos</a>
         </aside>
@@ -73,139 +73,269 @@
         <div class="case-content">
           <section class="case-section" id="contexto">
             <h2><span class="case-section__num">01</span> Contexto</h2>
-            <p class="callout">
-              Casi todo el mundo decía que compartiría coche entre el Berguedà y Barcelona. Muy pocos
-              llegaban a publicar un trayecto.
+            <p>
+              Antes de convertir la idea en producto, creamos un grupo de WhatsApp con personas de la
+              comunidad que compartían frecuentemente sus desplazamientos entre el Berguedà y Barcelona.
             </p>
             <p>
-              Pujobaixo puede presentarse como una investigación sobre la distancia entre una actitud
-              positiva —«compartiría coche entre el Berguedà y Barcelona»— y la conducta necesaria para
-              que el servicio funcione: publicar plazas disponibles. El contexto territorial justifica el
-              reto: el Berguedà combina municipios dispersos y servicios de movilidad adaptados a zonas de
-              baja demanda, mientras las administraciones refuerzan las conexiones de transporte público
-              con Barcelona. Pujobaixo responde a ese hueco con un modelo deliberadamente ligero: publicar
-              un trayecto es gratis y no compromete a nada, y el acuerdo —incluido el reparto del coste,
-              una referencia de 5 € por persona sobre unos 42 € de ida y vuelta— se cierra directamente
-              por WhatsApp, sin pagos ni reservas dentro de la app.
+              Las publicaciones eran sencillas: normalmente indicaban el día, el origen y la dirección del
+              trayecto. Las personas interesadas terminaban de coordinarse directamente y compartían los
+              gastos del viaje, sin tarifas fijas ni un sistema formal de pago.
+            </p>
+            <p>
+              Este sistema funcionaba dentro de una comunidad reducida, pero empezaba a mostrar
+              limitaciones a medida que aumentaban los mensajes y las necesidades de coordinación.
+            </p>
+            <p>
+              El objetivo de Pujobaixo era aprovechar mejor los vehículos que ya realizaban el trayecto,
+              reducir los desplazamientos con plazas vacías y construir una red local con suficiente
+              oferta y demanda para facilitar las coincidencias.
             </p>
           </section>
 
           <section class="case-section" id="decision-equipo">
             <h2><span class="case-section__num">02</span> Decisión que debía tomar el equipo</h2>
             <p>
-              Determinar cómo diseñar el flujo de publicación de un trayecto para que la actitud positiva
-              hacia compartir coche se tradujera en la acción real de publicar plazas, sin añadir fricción
-              ni pedir al conductor un compromiso que todavía no estaba dispuesto a asumir.
+              Debíamos determinar cómo trasladar una dinámica informal de WhatsApp a un producto digital
+              sin añadir procesos innecesarios ni eliminar la flexibilidad que hacía funcionar a la
+              comunidad.
             </p>
+            <p>
+              La decisión no consistía únicamente en diseñar una interfaz. Necesitábamos identificar:
+            </p>
+            <ul>
+              <li>Qué información era imprescindible para encontrar una coincidencia.</li>
+              <li>Qué partes de la coordinación podían estructurarse.</li>
+              <li>Qué interacciones debían mantenerse abiertas y flexibles.</li>
+              <li>Cómo hacer visible la oferta y la demanda disponibles.</li>
+            </ul>
           </section>
 
           <section class="case-section" id="pregunta">
             <h2><span class="case-section__num">03</span> Pregunta de investigación</h2>
             <p>
-              ¿Qué fricciones, motivaciones y señales de confianza determinan que un conductor publique un
-              trayecto recurrente?
+              ¿Cómo podemos transformar la coordinación informal de una comunidad que comparte trayectos
+              en una red escalable, manteniendo la sencillez y reduciendo el esfuerzo necesario para
+              encontrar una coincidencia?
+            </p>
+            <p>
+              Como pregunta secundaria, analizamos qué elementos del comportamiento existente debíamos
+              conservar para no convertir una práctica flexible en un proceso excesivamente rígido.
             </p>
           </section>
 
           <section class="case-section" id="hipotesis">
             <h2><span class="case-section__num">04</span> Hipótesis iniciales</h2>
-            <p>
-              El ahorro económico despierta interés, pero no basta para activar la publicación. Para dar
-              el paso, el conductor necesita percibir:
-            </p>
             <ul>
-              <li>Bajo esfuerzo: publicar un trayecto tiene que sentirse rápido y sencillo.</li>
-              <li>Control sobre la decisión: quién viaja con él lo decide él, no la plataforma.</li>
-              <li>Demanda real: que existan pasajeros interesados esperando, no un tablón vacío.</li>
+              <li>Existía suficiente recurrencia de trayectos para construir una red local.</li>
+              <li>Centralizar los viajes activos facilitaría encontrar coincidencias.</li>
+              <li>Estructurar la información reduciría las conversaciones necesarias para coordinar cada trayecto.</li>
+              <li>La coordinación final debía mantenerse en un canal familiar como WhatsApp.</li>
+              <li>El ahorro podía reforzar la propuesta de valor, aunque no era la única motivación para compartir vehículo.</li>
             </ul>
           </section>
 
           <section class="case-section" id="metodologia">
             <h2><span class="case-section__num">05</span> Metodología y participantes</h2>
             <p>
-              La investigación combinó entrevistas semiestructuradas con conductores habituales del
-              trayecto, un mapa del viaje actual (journey map), un test de usabilidad moderado sobre el
-              flujo de publicación, y una encuesta breve para priorizar los patrones detectados en
-              entrevista.
+              La investigación partió de la observación de un grupo de WhatsApp formado por personas de la
+              comunidad que ya compartían regularmente sus desplazamientos.
+            </p>
+            <p>
+              En lugar de preguntar únicamente si utilizarían el servicio, analizamos un comportamiento
+              que ya estaba ocurriendo:
+            </p>
+            <ul>
+              <li>Qué información incluían al ofrecer o pedir un viaje.</li>
+              <li>Cómo respondían las personas interesadas.</li>
+              <li>En qué momentos la coordinación se trasladaba a mensajes privados.</li>
+              <li>Qué dificultades aparecían al buscar viajes anteriores.</li>
+              <li>Cómo variaban la oferta y la demanda según el día y la dirección.</li>
+              <li>Qué impedía identificar una coincidencia disponible.</li>
+            </ul>
+            <p>
+              Estos aprendizajes se trasladaron progresivamente al diseño del flujo y a la construcción
+              del primer producto funcional.
             </p>
           </section>
 
           <section class="case-section" id="evidencia">
             <h2><span class="case-section__num">06</span> Evidencia observada</h2>
+            <p>
+              El grupo confirmó que existía una comunidad dispuesta a compartir trayectos y repartir los
+              gastos del desplazamiento.
+            </p>
+            <p>
+              Sin embargo, una conversación cronológica no funcionaba como sistema de gestión:
+            </p>
             <ul>
-              <li>Las entrevistas revelaron hábitos de trayecto, costes percibidos, experiencias previas compartiendo vehículo, y miedos relacionados con desconocidos, el compromiso de repetir o la coordinación de horarios.</li>
-              <li>El journey map situó el momento de mayor fricción no en la falta de interés, sino en el tramo entre "consideraría compartir coche" y "recibir el primer contacto" tras publicar.</li>
-              <li>El test de usabilidad mostró que la propuesta de valor, el propio flujo de publicación y la selección de acompañantes no siempre se entendían sin ayuda.</li>
-              <li>El ahorro (los 42 € del trayecto, hasta 30 € compartiendo tres plazas) generaba interés al explicarlo, pero no era, por sí solo, lo que llevaba a completar la publicación.</li>
+              <li>Costaba saber qué viajes continuaban disponibles.</li>
+              <li>La información necesaria no siempre aparecía completa.</li>
+              <li>Los mensajes antiguos quedaban enterrados por nuevas conversaciones.</li>
+              <li>Encontrar una coincidencia dependía de revisar manualmente el grupo.</li>
+              <li>No existía una visión conjunta de la oferta y la demanda.</li>
+              <li>La coordinación se volvía más difícil a medida que aumentaba la actividad.</li>
             </ul>
+            <p>
+              El grupo resolvía la comunicación entre personas, pero no permitía organizar ni escalar la
+              red.
+            </p>
+            <figure class="case-figure">
+              <img src="assets/pujobaixo-whatsapp-a-app.jpeg" alt="Comparativa entre los mensajes de WhatsApp donde se coordinaban los trayectos y la primera pantalla de viajes de Pujobaixo" loading="lazy" />
+              <figcaption>Coordinación original por WhatsApp junto a la primera pantalla de viajes de Pujobaixo, ya con la separación entre ofertas y solicitudes.</figcaption>
+            </figure>
           </section>
 
           <section class="case-section" id="insights">
             <h2><span class="case-section__num">07</span> Patrones e insights</h2>
-            <ul>
-              <li>Las personas no publican únicamente porque compartir sea beneficioso, sino cuando sienten que hacerlo es sencillo, seguro y útil desde el primer trayecto.</li>
-              <li>El ahorro capta la atención, pero el conductor necesita ver el proceso de publicación como algo de bajo esfuerzo antes de completarlo.</li>
-              <li>La sensación de control sobre quién viaja con él pesa tanto como el ahorro económico a la hora de decidirse.</li>
-            </ul>
+
+            <h3>1. El comportamiento ya existía</h3>
+            <p>
+              No necesitábamos crear desde cero el hábito de compartir coche. La comunidad ya lo hacía
+              cuando encontraba una coincidencia adecuada.
+            </p>
+
+            <h3>2. La principal fricción era la coordinación</h3>
+            <p>
+              El problema no era únicamente la falta de interés, sino el esfuerzo necesario para localizar
+              un viaje compatible, comprobar si seguía disponible y completar la información que faltaba.
+            </p>
+
+            <h3>3. Escalar requería estructurar, no complicar</h3>
+            <p>
+              El producto debía ordenar los viajes sin convertir una práctica sencilla en un proceso
+              rígido o burocrático.
+            </p>
+
+            <h3>4. La visibilidad de la red condicionaba su utilidad</h3>
+            <p>
+              Para que Pujobaixo generara valor, conductores y pasajeros necesitaban ver la oferta y la
+              demanda activas en cada dirección del trayecto.
+            </p>
+
+            <h3>5. WhatsApp seguía teniendo una función útil</h3>
+            <p>
+              La plataforma podía organizar el descubrimiento y facilitar la coincidencia, mientras que
+              WhatsApp permitía mantener una coordinación final directa, flexible y reconocible.
+            </p>
           </section>
 
           <section class="case-section" id="implicaciones">
             <h2><span class="case-section__num">08</span> Implicaciones para producto</h2>
             <p>
-              Cerrar la distancia entre la intención y la publicación real no se resolvía explicando mejor
-              el ahorro: exigía reducir el esfuerzo percibido de publicar, dar al conductor control
-              explícito sobre sus acompañantes, y hacer tangible tanto la pérdida de conducir con plazas
-              vacías como la demanda real que esperaba al otro lado.
+              La investigación mostró que Pujobaixo no debía sustituir completamente el comportamiento
+              existente, sino estructurar las partes que generaban más esfuerzo.
+            </p>
+            <p>
+              La principal oportunidad consistía en centralizar los viajes activos, normalizar la
+              información necesaria y diferenciar claramente entre quienes ofrecían plazas y quienes
+              buscaban desplazamiento.
+            </p>
+            <p>
+              También era importante conservar un modelo ligero: la plataforma facilitaría el encuentro,
+              pero las personas mantendrían el control sobre la decisión de viajar juntas y sobre la
+              coordinación final.
+            </p>
+            <p>
+              El ahorro debía comunicarse como un beneficio tangible de aprovechar plazas vacías, sin
+              reducir la propuesta de valor a una transacción económica. El propósito principal seguía
+              siendo optimizar desplazamientos y fortalecer una red local de movilidad compartida.
             </p>
           </section>
 
           <section class="case-section" id="decisiones">
             <h2><span class="case-section__num">09</span> Decisiones tomadas</h2>
-            <table class="decisions-table">
-              <thead>
-                <tr>
-                  <th scope="col">Decisión</th>
-                  <th scope="col">Justificación</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Visualizar el dinero perdido al conducir con plazas vacías (sobre los ~42 € del trayecto)</td>
-                  <td>Convierte una pérdida invisible en un coste tangible y concreto</td>
-                </tr>
-                <tr>
-                  <td>Convertir esa pérdida en ahorro acumulado al compartir (hasta 30 € con tres plazas)</td>
-                  <td>El ahorro proyectado motiva más que el coste puntual de un solo viaje</td>
-                </tr>
-                <tr>
-                  <td>Explicar el proceso de publicación en tres pasos</td>
-                  <td>Reduce el esfuerzo percibido de publicar un trayecto</td>
-                </tr>
-                <tr>
-                  <td>Comunicar que el conductor decide con quién viaja</td>
-                  <td>Da control real sobre la decisión, una de las principales barreras</td>
-                </tr>
-              </tbody>
-            </table>
+
+            <h3>Separar oferta y demanda</h3>
+            <p>
+              Organizamos los viajes en dos categorías: Ofrezco y Necesito. Esto permitía distinguir
+              rápidamente entre conductores con plazas disponibles y personas que buscaban un trayecto.
+            </p>
+
+            <h3>Estructurar la información del viaje</h3>
+            <p>
+              Cada publicación agrupaba los datos necesarios para evaluar una posible coincidencia:
+              origen, destino, fecha, hora, plazas y dirección del recorrido.
+            </p>
+
+            <h3>Centralizar los viajes activos</h3>
+            <p>
+              Los trayectos dejaron de depender del orden cronológico de una conversación y pasaron a
+              mostrarse como publicaciones consultables y actualizadas.
+            </p>
+
+            <h3>Mantener el contacto por WhatsApp</h3>
+            <p>
+              Una vez encontrada una coincidencia, las personas podían contactar directamente para
+              terminar de acordar los detalles. Esto reducía el alcance inicial del producto y preservaba
+              una dinámica que la comunidad ya conocía.
+            </p>
+
+            <h3>Dar control sobre las publicaciones</h3>
+            <p>
+              Los usuarios podían consultar, gestionar o cancelar sus propios viajes, haciendo más visible
+              qué oferta continuaba realmente disponible.
+            </p>
+
+            <h3>Hacer visible el beneficio compartido</h3>
+            <p>
+              La comunicación del producto incorporó el ahorro derivado de repartir los gastos, junto con
+              el beneficio colectivo de reducir vehículos con plazas vacías.
+            </p>
+
+            <p class="callout">
+              El nuevo flujo quedó estructurado en una secuencia sencilla: publicar una necesidad u oferta
+              → encontrar una coincidencia activa → coordinar el viaje por WhatsApp.
+            </p>
+            <figure class="case-figure">
+              <img src="assets/pujobaixo-v1-landing.jpg" alt="Primera pantalla publicitaria de Pujobaixo (v1), con el mensaje ¿Baixes a Bcn amb cotxe? ¿Puges al Berguedà?" loading="lazy" />
+              <figcaption>Primera versión publicitaria de Pujobaixo, comunicando el ahorro de aprovechar las plazas vacías del trayecto.</figcaption>
+            </figure>
           </section>
 
           <section class="case-section" id="resultado">
             <h2><span class="case-section__num">10</span> Resultado, limitaciones y próximos pasos</h2>
             <p>
-              El éxito de estos cambios se mide con la comprensión de la propuesta de valor, la tasa de
-              inicio y finalización del flujo de publicación, el tiempo para completar la tarea, y los
-              contactos generados por cada viaje publicado.
+              Pujobaixo convirtió una coordinación dispersa en un producto funcional capaz de centralizar
+              la oferta y la demanda de trayectos entre el Berguedà y Barcelona.
+            </p>
+            <figure class="case-figure">
+              <img src="assets/pujobaixo-version-actual.jpg" alt="Landing page actual de Pujobaixo, con las opciones Publicar les meves places y Busco viatge" loading="lazy" />
+              <figcaption>Versión actual de pujobaixo.cat, con opciones separadas para publicar plazas o buscar viaje.</figcaption>
+            </figure>
+            <p>
+              La principal aportación de la investigación fue identificar que el valor no estaba en
+              inventar una nueva conducta, sino en reducir el coste de coordinación de una práctica que ya
+              existía.
             </p>
             <p>
-              <strong>Limitaciones:</strong> la muestra de entrevistas se concentró en conductores
-              habituales ya predispuestos a compartir coche, por lo que no recoge las barreras de quienes
-              descartan la idea desde el principio.
+              El producto permitió formalizar la información mínima, hacer visibles los viajes activos y
+              preparar la dinámica para incorporar una comunidad más amplia.
             </p>
             <p>
-              <strong>Próximos pasos:</strong> medir las cuatro métricas de éxito tras el rediseño del
-              flujo de publicación, y contrastar si el test de usabilidad se traduce en una mayor tasa de
-              finalización real.
+              <strong>Limitaciones:</strong> la observación inicial se concentró en personas que ya
+              estaban predispuestas a compartir coche y pertenecían a una comunidad concreta. Esto
+              permitió comprender el comportamiento de usuarios activos, pero no explica todavía:
             </p>
+            <ul>
+              <li>Las barreras de quienes nunca han compartido vehículo.</li>
+              <li>Las necesidades de confianza entre personas desconocidas.</li>
+              <li>El comportamiento de la red con un volumen mayor de usuarios.</li>
+              <li>El equilibrio necesario entre oferta y demanda para generar coincidencias recurrentes.</li>
+            </ul>
+            <p>
+              <strong>Próximos pasos:</strong> la siguiente fase debería analizar el comportamiento real
+              del producto mediante:
+            </p>
+            <ul>
+              <li>Número de viajes ofrecidos y solicitados.</li>
+              <li>Coincidencias generadas por dirección y franja horaria.</li>
+              <li>Tiempo transcurrido hasta el primer contacto.</li>
+              <li>Porcentaje de publicaciones que reciben una respuesta.</li>
+              <li>Viajes cancelados o que dejan de estar disponibles.</li>
+              <li>Usuarios que vuelven a publicar.</li>
+              <li>Relación entre conductores y pasajeros activos.</li>
+            </ul>
           </section>
 
           <section class="case-section" aria-label="Resumen visual del proceso">
@@ -213,19 +343,24 @@
             <div class="evidence-flow">
               <div class="evidence-flow__step">
                 <span class="evidence-flow__label">Evidencia</span>
-                <p class="evidence-flow__text">Casi todos decían que compartirían coche; muy pocos llegaban a publicar un trayecto.</p>
+                <p class="evidence-flow__text">La comunidad ya compartía trayectos, pero resultaba difícil saber qué viajes seguían disponibles y encontrar una coincidencia dentro del grupo.</p>
               </div>
               <div class="evidence-flow__arrow" aria-hidden="true">→</div>
               <div class="evidence-flow__step">
                 <span class="evidence-flow__label">Insight</span>
-                <p class="evidence-flow__text">No publican solo porque compartir sea beneficioso, sino cuando sienten que hacerlo es sencillo, seguro y útil desde el primer trayecto.</p>
+                <p class="evidence-flow__text">La principal barrera no era la falta de voluntad para compartir coche, sino el esfuerzo de coordinar oferta y demanda mediante una conversación no estructurada.</p>
               </div>
               <div class="evidence-flow__arrow" aria-hidden="true">→</div>
               <div class="evidence-flow__step evidence-flow__step--decision">
                 <span class="evidence-flow__label">Decisión</span>
-                <p class="evidence-flow__text">Visualizar el ahorro, explicar el proceso en 3 pasos y dar control sobre los acompañantes.</p>
+                <p class="evidence-flow__text">Centralizar los viajes activos, separar oferta y demanda, estructurar la información necesaria y mantener WhatsApp para la coordinación final.</p>
               </div>
             </div>
+            <p class="callout">
+              <strong>Aprendizaje principal:</strong> escalar una práctica comunitaria no siempre exige
+              reemplazarla. A veces consiste en identificar qué ya funciona, estructurar únicamente las
+              fricciones y conservar la flexibilidad que hizo posible el comportamiento original.
+            </p>
           </section>
         </div>
       </div>
@@ -234,8 +369,8 @@
     <section class="case-cta">
       <div class="container">
         <span class="eyebrow">¿Seguimos hablando?</span>
-        <h2 style="margin-top: 0.75rem;">¿Tu producto tiene usuarios interesados que nunca dan el paso de usarlo?</h2>
-        <p>Hablemos de cómo investigar esa distancia entre la intención y la acción en tu producto.</p>
+        <h2 style="margin-top: 0.75rem;">¿Tu producto necesita escalar un comportamiento que ya existe en una comunidad?</h2>
+        <p>Hablemos de cómo estructurar solo las fricciones, sin perder la flexibilidad que lo hace funcionar.</p>
         <a class="btn btn-primary" href="index-es.html#contacto">Hablemos</a>
       </div>
     </section>
