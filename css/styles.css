@@ -666,6 +666,7 @@ p {
 .project-card__image {
   display: block;
   width: calc(100% + var(--space-4) * 2);
+  max-width: calc(100% + var(--space-4) * 2);
   aspect-ratio: 4 / 3;
   object-fit: cover;
   margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0;
