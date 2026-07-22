@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Triportation — La barrera no era la edad · David Chia</title>
-  <meta name="description" content="Partíamos pensando que la edad era la principal barrera para usar Triportation en VR. La investigación mostró que el problema real era la falta de referencias conocidas, acompañamiento y control." />
+  <meta name="description" content="Al observar el uso real de Triportation detectamos que la dificultad no dependía únicamente de la edad: muchas personas no encontraban referencias conocidas que les ayudaran a orientarse en la experiencia de realidad virtual." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
 </head>
 <body data-page="case">
   <a class="skip-link" href="#main">Saltar al contenido</a>
@@ -22,29 +22,39 @@
           <a href="index-es.html#investigaciones">Investigaciones</a> <span aria-hidden="true">/</span> <span>Triportation</span>
         </p>
         <span class="case-hero__client">The Wise Dreams · Triportation</span>
-        <h1>La barrera no era la edad: cómo acercamos la realidad virtual a viajeros mayores de 40 años</h1>
+        <h1>La barrera no era la edad: cómo hicimos más comprensible una experiencia de viaje en realidad virtual</h1>
         <p class="case-hero__desc">
-          El reto no era solo comprobar si una interfaz se entendía: era descubrir cómo introducir una
-          tecnología todavía desconocida —la RV— sin partir de un prejuicio asociado a la edad. La
-          investigación acabó corrigiendo esa hipótesis inicial.
+          Triportation es una experiencia de realidad virtual creada para descubrir destinos y su oferta
+          turística de forma inmersiva. Al observar su uso en contextos reales, detectamos que la
+          dificultad no dependía únicamente de la edad: muchas personas no encontraban referencias
+          conocidas que les ayudaran a comprender cómo empezar, orientarse y avanzar.
+        </p>
+        <p class="case-hero__desc">
+          La investigación cambió el enfoque del producto: pasamos de plantear más instrucciones a
+          reorganizar la experiencia alrededor de un punto de entrada claro, interacciones simples y
+          patrones familiares.
         </p>
 
         <dl class="case-meta">
           <div>
             <dt>Rol</dt>
-            <dd>UX Researcher</dd>
+            <dd>UX Researcher dentro del equipo de producto</dd>
           </div>
           <div>
             <dt>Periodo</dt>
-            <dd>Oct 2024 — Mayo 2026</dd>
+            <dd>Octubre de 2024 — mayo de 2026</dd>
           </div>
           <div>
             <dt>Métodos</dt>
-            <dd>Entrevistas exploratorias · Tests evaluativos</dd>
+            <dd>Observación contextual · Entrevistas exploratorias · Tests de usabilidad moderados</dd>
+          </div>
+          <div>
+            <dt>Contextos</dt>
+            <dd>Feria en Sevilla · Universidad de Las Palmas de Gran Canaria</dd>
           </div>
           <div>
             <dt>Sector</dt>
-            <dd>VR/AR · Travel</dd>
+            <dd>Travel · VR/AR</dd>
           </div>
         </dl>
       </div>
@@ -57,10 +67,10 @@
           <a href="#decision-equipo">2. Decisión del equipo</a>
           <a href="#pregunta">3. Pregunta de investigación</a>
           <a href="#hipotesis">4. Hipótesis iniciales</a>
-          <a href="#metodologia">5. Metodología</a>
+          <a href="#metodologia">5. Metodología y participantes</a>
           <a href="#evidencia">6. Evidencia observada</a>
           <a href="#insights">7. Patrones e insights</a>
-          <a href="#implicaciones">8. Implicaciones</a>
+          <a href="#implicaciones">8. Implicaciones para producto</a>
           <a href="#decisiones">9. Decisiones tomadas</a>
           <a href="#resultado">10. Resultado y próximos pasos</a>
         </aside>
@@ -68,161 +78,237 @@
         <div class="case-content">
           <section class="case-section" id="contexto">
             <h2><span class="case-section__num">01</span> Contexto</h2>
-            <p class="callout">
-              Partíamos pensando que la edad era la principal barrera. La investigación mostró que el
-              problema real era la falta de referencias conocidas, acompañamiento y control.
+            <p>
+              Triportation permitía explorar destinos, hoteles, puntos de interés, restaurantes y
+              cruceros desde un entorno de realidad virtual. Su función no era gestionar reservas, sino
+              ayudar a las agencias de viaje a presentar su oferta de una manera más visual, inmersiva e
+              inspiradora.
             </p>
             <p>
-              Triportation es un producto de realidad virtual de The Wise Dreams pensado para llevar
-              experiencias de viaje inmersivas a un público amplio. Al revisar el uso real de la
-              aplicación, el equipo detectó que buena parte de los usuarios de 40 años en adelante
-              abandonaban la experiencia en los primeros minutos. La lectura inicial fue directa: "son
-              mayores, la tecnología les cuesta". El reto de investigación no era solo comprobar si la
-              interfaz se entendía, sino algo más de fondo: cómo introducir una tecnología todavía
-              desconocida a un público concreto sin diseñar desde ese prejuicio.
+              La interfaz inicial reunía funcionalidades con distintos niveles de relevancia sin una
+              jerarquía clara. Al entrar en la experiencia, algunas personas no sabían dónde empezar, qué
+              acciones podían realizar ni cómo desplazarse por el entorno.
+            </p>
+            <p>
+              La interpretación inicial del equipo relacionaba estas dificultades con la edad de los
+              usuarios. Antes de diseñar una solución específica para personas mayores, necesitábamos
+              comprobar qué estaba provocando realmente la desorientación.
             </p>
           </section>
 
           <section class="case-section" id="decision-equipo">
             <h2><span class="case-section__num">02</span> Decisión que debía tomar el equipo</h2>
+            <p>Debíamos decidir entre dos direcciones:</p>
+            <ul>
+              <li><strong>Explicar más:</strong> incorporar un tutorial más largo dirigido a usuarios de mayor edad.</li>
+              <li><strong>Estructurar mejor:</strong> investigar las barreras reales y reorganizar la experiencia alrededor de interacciones más reconocibles.</li>
+            </ul>
             <p>
-              Decidir si el problema se resolvía con un tutorial más largo, pensado explícitamente "para
-              gente mayor", o si hacía falta investigar qué barreras explicaban de verdad el abandono
-              antes de diseñar nada a partir de la edad como variable.
+              La decisión era relevante porque condicionaba tanto el onboarding como la arquitectura de
+              información del producto.
             </p>
           </section>
 
           <section class="case-section" id="pregunta">
             <h2><span class="case-section__num">03</span> Pregunta de investigación</h2>
             <p>
-              ¿Qué barreras explican que algunas personas abandonen Triportation en los primeros minutos,
-              y qué papel juega realmente la edad frente a otros factores de comportamiento?
+              ¿Qué impide que algunas personas comprendan y exploren Triportation con autonomía durante
+              sus primeros minutos en realidad virtual?
+            </p>
+            <p>
+              Como pregunta secundaria, analizamos si la edad explicaba estas dificultades o si existían
+              factores más relevantes, como la familiaridad tecnológica, la experiencia previa con RV y
+              el reconocimiento de los patrones de interacción.
             </p>
           </section>
 
           <section class="case-section" id="hipotesis">
             <h2><span class="case-section__num">04</span> Hipótesis iniciales</h2>
             <ul>
-              <li>La edad es la principal barrera: a más edad, más dificultad para navegar en RV.</li>
-              <li>Un tutorial más largo, pensado para principiantes mayores, resolvería la mayoría de las dificultades.</li>
-              <li>La incomodidad física (mareo, desorientación) es la causa principal, al margen del perfil del usuario.</li>
+              <li>La edad era la principal barrera para utilizar la experiencia.</li>
+              <li>Un tutorial más extenso reduciría la mayoría de las dificultades.</li>
+              <li>La incomodidad física de la RV era la principal causa de abandono.</li>
+              <li>Mostrar todas las funcionalidades desde el inicio ayudaría a comprender el alcance del producto.</li>
             </ul>
           </section>
 
           <section class="case-section" id="metodologia">
             <h2><span class="case-section__num">05</span> Metodología y participantes</h2>
             <p>
-              Para no diseñar desde el estereotipo de la edad, se segmentó a los participantes por
-              comportamiento y no solo por edad: experiencia tecnológica previa, frecuencia de viaje,
-              familiaridad con RV y necesidad percibida de acompañamiento. La investigación combinó una
-              fase exploratoria —entrevistas para descubrir barreras— con una fase evaluativa —tests de
-              usabilidad moderados para validar soluciones—, con perfiles cruzados: personas de 40+ con
-              alta y baja familiaridad tecnológica, y también participantes más jóvenes con poca
-              experiencia previa en videojuegos o VR.
+              Realizamos la investigación en dos contextos diferentes: una feria en Sevilla, donde las
+              personas probaban la experiencia dentro de un entorno abierto, y una sesión en la
+              Universidad de Las Palmas de Gran Canaria, en un contexto de prueba más controlado.
+            </p>
+            <p>
+              Combinamos observación contextual, conversaciones exploratorias y tests de usabilidad
+              moderados. Durante las primeras interacciones observamos:
+            </p>
+            <ul>
+              <li>Cómo intentaban empezar la experiencia.</li>
+              <li>En qué momentos necesitaban ayuda.</li>
+              <li>Cómo interpretaban los controles y elementos visuales.</li>
+              <li>Qué decisiones les generaban dudas.</li>
+              <li>Cómo se orientaban dentro del espacio virtual.</li>
+            </ul>
+            <p>
+              Para analizar los comportamientos, consideramos la familiaridad con la tecnología y la
+              experiencia previa con videojuegos o realidad virtual, en lugar de utilizar únicamente la
+              edad como criterio de segmentación.
             </p>
           </section>
 
           <section class="case-section" id="evidencia">
             <h2><span class="case-section__num">06</span> Evidencia observada</h2>
-            <ul>
-              <li>Dentro del grupo de 40 años en adelante, quienes viajaban con frecuencia y ya usaban apps de reserva o mapas se orientaban en el entorno virtual casi tan bien como los participantes más jóvenes.</li>
-              <li>La dificultad no se concentraba en la edad: quienes nunca habían usado un mando de videojuegos no entendían qué hacía cada botón, con independencia de los años que tuvieran.</li>
-              <li>Aparecían aspectos emocionales explícitos —miedo a "hacerlo mal", sensación de pérdida de control— tanto en participantes mayores como en algún participante joven sin experiencia previa en VR.</li>
-              <li>El propio entorno de prueba añadía complejidad más allá del aprendizaje: interacción física con los mandos, orientación espacial, fatiga tras varios minutos y mareo.</li>
-              <li>Varios participantes pedían sentirse acompañados en su primera sesión, no simplemente tener más texto explicativo en el tutorial.</li>
-            </ul>
-            <blockquote class="quote">
-              "No sabía dónde había ido a parar. Cada vez que pulsaba el botón, me daba miedo perderme."
-              <cite>Participante, 58 años, primera experiencia en VR</cite>
-            </blockquote>
+            <p>
+              La realidad virtual era un medio nuevo incluso para personas habituadas a utilizar
+              aplicaciones y páginas web. Al entrar en el entorno, muchos participantes no disponían de un
+              modelo mental claro sobre cómo interactuar con él.
+            </p>
+            <p>
+              La interfaz inicial aumentaba esta dificultad porque presentaba varias funcionalidades
+              simultáneamente, sin señalar cuál debía ser el primer paso.
+            </p>
+            <p>
+              Los usuarios buscaban referencias conocidas que les permitieran entender dónde se
+              encontraban, qué podían hacer y qué ocurriría después de cada acción.
+            </p>
+            <p>
+              Las dificultades aparecían también en participantes jóvenes con poca experiencia en
+              videojuegos o RV. Esto indicaba que la edad, por sí sola, no explicaba el comportamiento
+              observado.
+            </p>
           </section>
 
           <section class="case-section" id="insights">
             <h2><span class="case-section__num">07</span> Patrones e insights</h2>
-            <ul>
-              <li>La edad no era el factor determinante: la familiaridad tecnológica y la frecuencia de viaje explicaban mejor quién se adaptaba rápido y quién no.</li>
-              <li>El problema real era la falta de referencias conocidas —no reconocer las convenciones de control—, no una menor capacidad para aprender algo nuevo.</li>
-              <li>La sensación de acompañamiento y de control sobre lo que iba a pasar reducía el miedo a "hacerlo mal" más que cualquier explicación adicional en el tutorial.</li>
-            </ul>
+
+            <h3>1. La familiaridad era más relevante que la edad</h3>
+            <p>
+              Las dificultades estaban relacionadas principalmente con la experiencia previa y con la
+              capacidad de reconocer las convenciones de interacción, no con una menor capacidad de
+              aprendizaje asociada a la edad.
+            </p>
+
+            <h3>2. La RV necesitaba puntos de anclaje conocidos</h3>
+            <p>
+              Dentro de un entorno nuevo, las personas buscaban elementos que pudieran relacionar con
+              otros medios: una portada cinematográfica, una navegación similar a una aplicación o una
+              estructura visual reconocible.
+            </p>
+
+            <h3>3. Explicar más no solucionaba una estructura confusa</h3>
+            <p>
+              El problema no era únicamente la falta de instrucciones. La experiencia mostraba demasiadas
+              posibilidades antes de que el usuario comprendiera cuál era el recorrido principal.
+            </p>
+
+            <h3>4. Menos acciones aumentaban la sensación de control</h3>
+            <p>
+              Reducir las decisiones visibles y establecer una secuencia clara podía disminuir la carga
+              cognitiva y facilitar que las personas exploraran el producto con mayor autonomía.
+            </p>
           </section>
 
           <section class="case-section" id="implicaciones">
             <h2><span class="case-section__num">08</span> Implicaciones para producto</h2>
             <p>
-              Diseñar un tutorial "para gente mayor" habría partido de un estereotipo equivocado y habría
-              dejado sin resolver la barrera real, presente también en usuarios jóvenes sin experiencia en
-              RV. La oportunidad de producto no estaba en la edad del usuario, sino en dar referencias
-              conocidas, acompañamiento progresivo y sensación de control desde el primer minuto —con
-              implicaciones directas en accesibilidad y adopción tecnológica del producto, dos áreas con
-              mucho peso estratégico para un producto todavía nuevo en el mercado.
+              La investigación descartó diseñar una experiencia específica para "personas mayores". Esa
+              solución habría partido de una variable demográfica que no explicaba por sí sola las
+              dificultades observadas.
+            </p>
+            <p>
+              La oportunidad estaba en traducir la realidad virtual a un lenguaje de interacción más
+              familiar: establecer un punto de entrada reconocible, reducir las acciones necesarias y
+              presentar la información de manera progresiva.
+            </p>
+            <p>
+              También necesitábamos priorizar las funcionalidades que sostenían la propuesta de valor
+              para nuestros clientes, principalmente agencias de viaje: facilitar el descubrimiento de
+              destinos y presentar visualmente su oferta turística.
             </p>
           </section>
 
           <section class="case-section" id="decisiones">
             <h2><span class="case-section__num">09</span> Decisiones tomadas</h2>
-            <table class="decisions-table">
-              <thead>
-                <tr>
-                  <th scope="col">Decisión</th>
-                  <th scope="col">Justificación</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Sustituir el tutorial único por un onboarding progresivo, adaptado a la familiaridad tecnológica detectada, no a la edad</td>
-                  <td>La barrera real era la falta de referencias conocidas, no la edad del usuario</td>
-                </tr>
-                <tr>
-                  <td>Incorporar navegación guiada y controles simplificados en la primera sesión</td>
-                  <td>Reduce el miedo a "hacerlo mal" y la sensación de pérdida de control</td>
-                </tr>
-                <tr>
-                  <td>Diseñar una transición desde web o móvil hacia VR, con referencias ya conocidas antes de ponerse las gafas</td>
-                  <td>Da acompañamiento y contexto antes de entrar a un entorno totalmente desconocido</td>
-                </tr>
-              </tbody>
-            </table>
+
+            <h3>Destino como punto de entrada</h3>
+            <p>
+              Convertimos la selección del destino en la acción principal. Desde allí, el usuario podía
+              descubrir los diferentes lugares disponibles y acceder a sus contenidos asociados.
+            </p>
+
+            <h3>Mesa 3D como referencia espacial</h3>
+            <p>
+              Organizamos la navegación alrededor de una mesa tridimensional que funcionaba como punto de
+              anclaje dentro del entorno virtual. Esto permitía reconocer dónde se encontraba el usuario y
+              desplazarse entre destinos mediante interacciones sencillas.
+            </p>
+            <figure class="case-figure">
+              <img src="assets/triportation-navegacion-destino-mesa3d.jpg" alt="Barra de navegación de Triportation con las opciones Destino, Mesa 3D, Expandido y Salir" loading="lazy" />
+              <figcaption>Barra de navegación del producto, con el punto de entrada por destino y el modo Mesa 3D como referencia espacial.</figcaption>
+            </figure>
+
+            <h3>Contenido organizado progresivamente</h3>
+            <p>
+              Hoteles, puntos de interés, restaurantes y cruceros aparecían después de seleccionar un
+              destino, evitando mostrar toda la oferta desde el inicio.
+            </p>
+            <figure class="case-figure">
+              <img src="assets/triportation-seleccion-contenido.jpg" alt="Pantalla de selección de habitaciones de Triportation, mostrada tras elegir un destino" loading="lazy" />
+              <figcaption>Pantalla de selección de contenido (habitaciones) tras elegir un destino, con paginación y estado de carga.</figcaption>
+            </figure>
+
+            <h3>Filtros como función secundaria</h3>
+            <p>
+              Los filtros ayudaban a acotar la exploración, pero no competían visualmente con la acción
+              principal.
+            </p>
+
+            <h3>Patrones visuales familiares</h3>
+            <p>
+              Incorporamos referencias procedentes del cine, las aplicaciones y la web para reducir la
+              distancia entre una tecnología nueva y modelos de interacción que las personas ya conocían.
+            </p>
+
+            <p class="callout">
+              El nuevo recorrido quedó reducido a una secuencia comprensible: elegir un destino →
+              explorarlo sobre la mesa 3D → descubrir su oferta turística.
+            </p>
           </section>
 
           <section class="case-section" id="resultado">
             <h2><span class="case-section__num">10</span> Resultado, limitaciones y próximos pasos</h2>
             <p>
-              Segmentar por comportamiento en vez de por edad cambió el rumbo del rediseño: el equipo pasó
-              de plantear un tutorial "para mayores" a implementar un onboarding progresivo y una
-              transición guiada desde web/móvil hacia VR. Mi colaboración con The Wise Dreams terminó en
-              mayo de 2026, antes de disponer del resultado cuantitativo completo del rediseño.
+              La investigación cambió el foco del rediseño: dejamos de intentar explicar una interfaz
+              compleja mediante más instrucciones y empezamos a construir una experiencia más
+              jerarquizada, familiar y orientada al descubrimiento.
             </p>
             <p>
-              <strong>Limitaciones:</strong> la muestra de perfiles cruzados fue pequeña; separar del todo
-              los factores emocionales (miedo, control) de los puramente motrices (manejo de los mandos)
-              es difícil con tan pocos participantes.
+              El principal impacto fue sustituir una segmentación basada en la edad por decisiones
+              fundamentadas en la familiaridad tecnológica y en el comportamiento observado.
             </p>
             <p>
-              <strong>Próximos pasos (recomendados al equipo):</strong> validar el onboarding progresivo
-              con una muestra más amplia y segmentada por comportamiento, y medir si la transición
-              web/app–VR reduce el abandono temprano en usuarios con baja familiaridad tecnológica, al
-              margen de su edad.
+              <strong>Limitaciones:</strong> la investigación se realizó con una muestra exploratoria
+              reducida y en dos contextos específicos. Por ello, los resultados permitían orientar el
+              diseño, pero no generalizarlos a toda la población ni demostrar todavía una mejora
+              cuantitativa.
             </p>
-          </section>
-
-          <section class="case-section" aria-label="Resumen visual del proceso">
-            <h4>Evidencia → Insight → Decisión</h4>
-            <div class="evidence-flow">
-              <div class="evidence-flow__step">
-                <span class="evidence-flow__label">Evidencia</span>
-                <p class="evidence-flow__text">Dentro del grupo 40+, quienes viajaban con frecuencia se orientaban casi igual de bien que los participantes jóvenes; el miedo a "hacerlo mal" aparecía en todas las edades.</p>
-              </div>
-              <div class="evidence-flow__arrow" aria-hidden="true">→</div>
-              <div class="evidence-flow__step">
-                <span class="evidence-flow__label">Insight</span>
-                <p class="evidence-flow__text">La edad no era la barrera real: era la falta de referencias conocidas, acompañamiento y control.</p>
-              </div>
-              <div class="evidence-flow__arrow" aria-hidden="true">→</div>
-              <div class="evidence-flow__step evidence-flow__step--decision">
-                <span class="evidence-flow__label">Decisión</span>
-                <p class="evidence-flow__text">Onboarding progresivo, navegación guiada y transición web/móvil–VR, según familiaridad tecnológica, no edad.</p>
-              </div>
-            </div>
+            <p>
+              <strong>Próximos pasos:</strong> la siguiente fase debería evaluar el nuevo recorrido con
+              una muestra más amplia y medir:
+            </p>
+            <ul>
+              <li>Finalización de la primera exploración sin ayuda.</li>
+              <li>Tiempo hasta seleccionar el primer destino.</li>
+              <li>Número de solicitudes de asistencia.</li>
+              <li>Errores o acciones no intencionadas.</li>
+              <li>Abandono durante los primeros minutos.</li>
+            </ul>
+            <p class="callout">
+              <strong>Aprendizaje principal:</strong> la investigación no demostró que las personas
+              necesitaran más instrucciones. Demostró que una tecnología nueva necesita apoyarse en
+              referencias conocidas para poder ser comprendida.
+            </p>
           </section>
         </div>
       </div>

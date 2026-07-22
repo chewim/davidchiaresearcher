@@ -1002,6 +1002,28 @@ p {
   color: var(--color-text);
 }
 
+.case-section > h3 {
+  margin-top: var(--space-4);
+}
+
+.case-figure {
+  margin-top: var(--space-4);
+}
+
+.case-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--color-text);
+}
+
+.case-figure figcaption {
+  margin-top: var(--space-2);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
 .case-section ul {
   display: flex;
   flex-direction: column;
