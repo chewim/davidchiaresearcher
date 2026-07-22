@@ -126,54 +126,67 @@
   }
 
   function initReveal() {
-    const titles = document.querySelectorAll(".reveal-title");
-    titles.forEach(splitTitleLines);
+    function run() {
+      const titles = document.querySelectorAll(".reveal-title");
+      titles.forEach(splitTitleLines);
 
-    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-      // Still group + split for correct static layout; the reduced-motion
-      // CSS block neutralizes the transitions themselves.
-      prepareAutoGroups();
-      showAllRevealTargets();
-      return;
+      if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+        // Still group + split for correct static layout; the reduced-motion
+        // CSS block neutralizes the transitions themselves.
+        prepareAutoGroups();
+        showAllRevealTargets();
+        return;
+      }
+
+      const groups = prepareAutoGroups();
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          });
+        },
+        { threshold: 0, rootMargin: "0px 0px -20% 0px" }
+      );
+      // Individually-marked elements outside any auto-group (hero, page intros).
+      document
+        .querySelectorAll(".reveal, .reveal-title, .reveal-visual")
+        .forEach((el) => {
+          if (!el.closest(".reveal-group") || el.classList.contains("reveal-title")) io.observe(el);
+        });
+
+      const maxSpread = 560;
+      const groupIo = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const match = groups.find((g) => g.el === entry.target);
+            if (match) {
+              match.children.forEach((item, i) => {
+                item.style.transitionDelay = `${Math.min(i * match.step, maxSpread)}ms`;
+                item.classList.add("is-visible");
+              });
+            }
+            groupIo.unobserve(entry.target);
+          });
+        },
+        { threshold: 0, rootMargin: "0px 0px -20% 0px" }
+      );
+      document.querySelectorAll(".reveal-group").forEach((el) => groupIo.observe(el));
     }
 
-    const groups = prepareAutoGroups();
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        });
-      },
-      { threshold: 0, rootMargin: "0px 0px -20% 0px" }
-    );
-    // Individually-marked elements outside any auto-group (hero, page intros).
-    document
-      .querySelectorAll(".reveal, .reveal-title, .reveal-visual")
-      .forEach((el) => {
-        if (!el.closest(".reveal-group") || el.classList.contains("reveal-title")) io.observe(el);
-      });
-
-    const maxSpread = 560;
-    const groupIo = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const match = groups.find((g) => g.el === entry.target);
-          if (match) {
-            match.children.forEach((item, i) => {
-              item.style.transitionDelay = `${Math.min(i * match.step, maxSpread)}ms`;
-              item.classList.add("is-visible");
-            });
-          }
-          groupIo.unobserve(entry.target);
-        });
-      },
-      { threshold: 0, rootMargin: "0px 0px -20% 0px" }
-    );
-    document.querySelectorAll(".reveal-group").forEach((el) => groupIo.observe(el));
+    // Line-splitting measures real text width, so it must run after web fonts
+    // are loaded — otherwise it locks in line breaks based on the fallback
+    // font's metrics (visible as an awkward wrap/gap once Inter swaps in).
+    // Race against a short timeout so a slow or unsupported fonts API never
+    // blocks the reveal system.
+    if (document.fonts && document.fonts.status !== "loaded") {
+      Promise.race([document.fonts.ready, new Promise((resolve) => setTimeout(resolve, 500))]).then(run);
+    } else {
+      run();
+    }
   }
 
   /* ---------------------------------------------------------------------
