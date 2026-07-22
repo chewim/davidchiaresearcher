@@ -663,6 +663,15 @@ p {
   box-shadow: var(--shadow-lg);
 }
 
+.project-card__image {
+  display: block;
+  width: calc(100% + var(--space-4) * 2);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) 0;
+  border-bottom: 2px solid var(--color-text);
+}
+
 .project-card__client {
   font-family: var(--font-mono);
   font-size: 0.8125rem;
