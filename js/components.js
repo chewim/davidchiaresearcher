@@ -103,7 +103,7 @@
         </button>
         <nav class="nav" id="primary-nav" aria-label="${t.mainNav}">
           <ul class="nav__list">${links}</ul>
-          <a class="btn btn-primary nav__cta" href="${CV_PDF}" download>${t.downloadCta}</a>
+          <a class="btn btn-primary nav__cta" href="${CV_PDF}" target="_blank" rel="noopener">${t.downloadCta}</a>
           ${renderLangSwitch()}
         </nav>
       </div>
